@@ -7,6 +7,9 @@
 <meta name="description" content="Spoken English, Grammar, Vocabulary & Communication training. Since 2020." />
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<!-- Scripts for PDF Generation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
   tailwind.config = { theme: { extend: {
     colors: { 
@@ -45,6 +48,54 @@
   ::-webkit-scrollbar-track { background: #ecfdf5; }
   ::-webkit-scrollbar-thumb { background: #6ee7b7; border-radius: 4px; }
   ::-webkit-scrollbar-thumb:hover { background: #34d399; }
+
+  /* --- DEMO FORM SPECIFIC CSS --- */
+  .demo-container { background: #ffffff; padding: 30px; border-radius: 12px; position: relative; width: 100%; margin: 0 auto; }
+  .brand-header { text-align: center; margin-bottom: 25px; border-bottom: 3px double #1e3a8a; padding-bottom: 15px; width: 100%; overflow: hidden; }
+  .brand-header h1 { color: #1e3a8a; font-size: 26px; font-weight: 800; letter-spacing: 0.5px; margin-bottom: 5px; text-transform: uppercase; }
+  .brand-header .academy-sub { color: #2563eb; font-size: 15px; font-weight: 600; margin-bottom: 8px; text-transform: uppercase; }
+  .brand-header .contact-info { color: #475569; font-size: 13px; line-height: 1.5; }
+  .demo-badge-panel { background-color: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 15px; text-align: center; margin-bottom: 20px; }
+  .demo-badge-panel h2 { color: #1e3a8a; font-size: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
+  .meta-flex-row { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  .meta-pill { font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 4px; }
+  .pill-id { color: #dc2626; background-color: #fee2e2; border: 1px solid #fca5a5; }
+  .pill-date { color: #16a34a; background-color: #f0fdf4; border: 1px solid #bbf7d0; }
+  .section-title { color: #2563eb; font-size: 15px; font-weight: 600; margin: 20px 0 10px 0; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px; text-transform: uppercase; }
+  .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .full-width { grid-column: span 2; }
+  .form-group { display: flex; flex-direction: column; margin-bottom: 5px; position: relative; }
+  .form-group label { font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 6px; }
+  .form-group input, .form-group select { padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; color: #0f172a; background-color: #f8fafc; outline: none; transition: all 0.3s ease; width: 100%; }
+  .conditional-wrapper { display: none; margin-top: 5px; width: 100%; }
+  .uppercase-input { text-transform: uppercase; }
+  .lowercase-input { text-transform: lowercase; }
+  .preference-card-stack { display: flex; flex-direction: column; gap: 10px; width: 100%; }
+  .radio-card-option { display: flex; align-items: flex-start; gap: 10px; padding: 12px; background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; color: #334155; transition: background-color 0.2s; }
+  .radio-card-option input { width: auto; margin-top: 3px; cursor: pointer; }
+  .snapshot-text-view { display: none; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; color: #0f172a; background-color: #f8fafc; word-break: break-all; white-space: pre-wrap; min-height: 45px; font-weight: 600; }
+  
+  /* স্ন্যাপশট মোডে ফর্মকে ছোট ও কম্প্যাক্ট করা হলো যাতে ১ পেজে ফিট হয় */
+  .snapshot-mode { width: 750px !important; max-width: 750px !important; padding: 20px 25px !important; background: #fff !important; }
+  .snapshot-mode .snapshot-text-view { display: block !important; padding: 6px 10px !important; min-height: 35px !important; font-size: 13px !important; margin-top: 2px !important; }
+  .snapshot-mode input, .snapshot-mode select, .snapshot-mode .preference-card-stack { display: none !important; }
+  .snapshot-mode .conditional-wrapper:not(.active-snapshot-field) .snapshot-text-view { display: none !important; }
+  .snapshot-mode .brand-header { margin-bottom: 10px !important; padding-bottom: 10px !important; }
+  .snapshot-mode .demo-badge-panel { padding: 10px !important; margin-bottom: 10px !important; }
+  .snapshot-mode .section-title { margin: 12px 0 6px 0 !important; font-size: 13px !important; }
+  .snapshot-mode .form-grid { gap: 8px !important; }
+  .snapshot-mode .form-group { margin-bottom: 0 !important; }
+  .snapshot-mode .form-group label { margin-bottom: 2px !important; font-size: 12px !important; }
+
+  .form-group input:focus, .form-group select:focus { border-color: #2563eb; background-color: #fff; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+  
+  @media (max-width: 600px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .full-width { grid-column: span 1; }
+      .demo-container { padding: 20px 15px; }
+      .meta-flex-row { flex-direction: column; align-items: center; gap: 6px; }
+      .brand-header h1 { font-size: 22px; }
+  }
 </style>
 </head>
 <body class="text-slate-800 antialiased" data-lang="bn">
@@ -61,9 +112,10 @@
     </button>
     
     <!-- Desktop Menu -->
-    <nav class="hidden xl:flex items-center gap-4">
+    <nav class="hidden xl:flex items-center gap-3">
       <button class="nav-tab active text-sm font-semibold text-slate-500 hover:text-brand transition" data-tab="home">Home</button>
       <button class="nav-tab text-sm font-semibold text-slate-500 hover:text-brand transition" data-tab="courses">Courses</button>
+      <button class="nav-tab text-sm font-bold text-orange-500 hover:text-orange-600 transition" data-tab="demo">Book Free Demo</button>
       <button class="nav-tab text-sm font-semibold text-slate-500 hover:text-brand transition" data-tab="gallery">Gallery</button>
       <button class="nav-tab text-sm font-semibold text-slate-500 hover:text-brand transition" data-tab="testimonials">Testimonials</button>
       <button class="nav-tab text-sm font-semibold text-slate-500 hover:text-brand transition" data-tab="career">Career</button>
@@ -90,6 +142,7 @@
   <div id="mobileMenu" class="hidden xl:hidden absolute top-full left-0 w-full bg-white border-b border-emerald-100 shadow-xl px-4 py-4 space-y-1 max-h-[80vh] overflow-y-auto">
     <button class="nav-tab active block w-full text-left px-4 py-2.5 rounded-xl text-sm font-semibold bg-emerald-50 text-brand" data-tab="home">Home</button>
     <button class="nav-tab block w-full text-left px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-600 hover:bg-emerald-50" data-tab="courses">Courses</button>
+    <button class="nav-tab block w-full text-left px-4 py-2.5 rounded-xl text-sm font-bold text-orange-500 bg-orange-50" data-tab="demo">Book Free Demo</button>
     <button class="nav-tab block w-full text-left px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-600 hover:bg-emerald-50" data-tab="gallery">Gallery</button>
     <button class="nav-tab block w-full text-left px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-600 hover:bg-emerald-50" data-tab="testimonials">Testimonials</button>
     <button class="nav-tab block w-full text-left px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-600 hover:bg-emerald-50" data-tab="career">Career</button>
@@ -115,13 +168,10 @@
     
     <!-- HERO SECTION -->
     <div class="relative bg-[#022c22] rounded-[2.5rem] overflow-hidden p-8 md:p-14 lg:p-20 text-white shadow-2xl border border-emerald-900/50">
-      <!-- Background Glowing Effects -->
       <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/20 rounded-full mix-blend-screen filter blur-[100px] opacity-70 animate-pulse"></div>
       <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-lime-500/10 rounded-full mix-blend-screen filter blur-[100px] opacity-50"></div>
       
       <div class="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        
-        <!-- Left Side: Text & Buttons -->
         <div class="text-center lg:text-left">
           <div class="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 text-emerald-300 px-5 py-2 rounded-full text-xs font-bold tracking-widest mb-6 shadow-inner">
             <span class="w-2 h-2 rounded-full bg-lime-400 animate-ping"></span> 
@@ -135,8 +185,8 @@
           </h1>
           
           <p class="text-emerald-100/70 text-base md:text-lg mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
-            <span class="i18n-bn">স্পোকেন ইংলিশ থেকে শুরু করে AI, ভাইব কোডিং এবং কমিউনিকেশন—সব বয়সের জন্য প্র্যাকটিক্যাল ও প্রফেশনাল ট্রেনিং।</span>
-            <span class="i18n-en">From Spoken English to AI, Vibe Coding, and Communication—practical & professional training for all ages.</span>
+            <span class="i18n-bn">স্পোকেন ইংলিশ থেকে শুরু করে AI, ভাইব কোডিং,কম্পিউটার, গ্রাফিক্স ডিজাইন—সব বয়সের জন্য প্র্যাকটিক্যাল ও প্রফেশনাল ট্রেনিং।</span>
+            <span class="i18n-en">From Spoken English to AI, Vibe Coding, Computer, Graphics Design—practical & professional training for all ages.</span>
           </p>
           
           <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
@@ -144,21 +194,15 @@
               <span class="i18n-bn">ভর্তি হোন</span><span class="i18n-en">Join Now</span> 
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </a>
-            <button onclick="switchTab('courses')" class="w-full sm:w-auto bg-white/5 backdrop-blur-md border border-white/10 text-white font-bold px-8 py-3.5 rounded-2xl hover:bg-white/10 transition-all flex items-center justify-center gap-2 text-lg">
-              <span class="i18n-bn">কোর্স দেখুন</span><span class="i18n-en">View Courses</span>
+            <button onclick="switchTab('demo')" class="w-full sm:w-auto bg-white/5 backdrop-blur-md border border-white/10 text-white font-bold px-8 py-3.5 rounded-2xl hover:bg-white/10 transition-all flex items-center justify-center gap-2 text-lg">
+              <span class="i18n-bn">ফ্রি ডেমো ক্লাস</span><span class="i18n-en">Free Demo Class</span>
             </button>
           </div>
         </div>
 
-        <!-- Right Side: Image -->
         <div class="relative block mt-12 lg:mt-0 max-w-sm mx-auto lg:max-w-none w-full">
-          <!-- Glow behind image -->
           <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500 to-lime-400 rounded-3xl blur-2xl opacity-20 animate-pulse"></div>
-          
-          <!-- Main Image -->
           <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop" alt="Students learning at English Spur" class="relative z-10 rounded-[2rem] shadow-2xl border border-white/10 object-cover w-full h-64 sm:h-80 lg:h-[420px]">
-          
-          <!-- Floating Badge -->
           <div class="absolute bottom-4 left-4 md:-bottom-6 md:-left-6 bg-white/95 backdrop-blur-md p-3 md:p-4 rounded-2xl shadow-xl z-20 flex items-center gap-3 md:gap-4 border border-emerald-50">
              <div class="w-10 h-10 md:w-12 md:h-12 bg-emerald-100 rounded-full flex items-center justify-center text-xl md:text-2xl">🌟</div>
              <div>
@@ -167,7 +211,6 @@
              </div>
           </div>
         </div>
-
       </div>
     </div>
 
@@ -211,7 +254,7 @@
     <!-- OTHER SITES (APP LAUNCHER STYLE) -->
     <div class="mt-16 mb-8">
       <div class="flex items-center justify-between mb-6">
-        <h2 class="text-2xl md:text-3xl font-black text-slate-800 tracking-tight"><span class="i18n-bn">আমাদের অন্যান্য সাইট</span><span class="i18n-en">Explore Our Ecosystem</span></h2>
+        <h2 class="text-2xl md:text-3xl font-black text-slate-800 tracking-tight"><span class="i18n-bn">আমাদের অন্যান্য সাইট এবং কিছু ওয়েব অ্যাপস</span><span class="i18n-en">Explore Our Ecosystem & Some Web Apps</span></h2>
         <div class="h-1 flex-1 bg-gradient-to-r from-emerald-100 to-transparent ml-6 rounded-full"></div>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5" id="homeSites"></div>
@@ -223,10 +266,9 @@
   <section id="tab-courses" class="tab-content">
     <div class="text-center max-w-2xl mx-auto mb-10">
       <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-3"><span class="i18n-bn">আমাদের কোর্সসমূহ</span><span class="i18n-en">Our Courses</span></h2>
-      <p class="text-slate-500"><span class="i18n-bn">বাংলা-বান্ধব লাইভ ক্লাসে আত্মবিশ্বাসের সাথে ইংরেজি শিখুন</span><span class="i18n-en">Learn English confidently with Bengali-friendly live classes</span></p>
+      <p class="text-slate-500"><span class="i18n-bn">বাংলা-বান্ধব লাইভ ক্লাসে আত্মবিশ্বাসের সাথে ইংরেজি এবং অন্যান্য স্কিল শিখুন</span><span class="i18n-en">Learn English and Other Skills confidently with Bengali-friendly live classes</span></p>
     </div>
 
-    <!-- Dynamic Course Grid Container -->
     <div class="max-w-6xl mx-auto">
       <div id="coursesLoading" class="text-center py-16 text-slate-400 font-semibold animate-pulse">
         <svg class="animate-spin mx-auto h-8 w-8 text-brand mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
@@ -235,7 +277,6 @@
       <div id="coursesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
     </div>
 
-    <!-- CTA CARDS (STATIC) -->
     <div class="mt-12 grid md:grid-cols-2 gap-5 max-w-6xl mx-auto">
       <a href="https://english-spur.github.io/admission-site/" target="_blank" rel="noopener" class="group relative overflow-hidden bg-gradient-to-br from-emerald-600 to-teal-800 rounded-3xl p-8 text-white hover:shadow-2xl hover:shadow-emerald-600/30 transition-all duration-300">
         <div class="relative z-10 flex flex-col h-full justify-between">
@@ -256,7 +297,7 @@
           <div>
             <div class="text-4xl mb-4 group-hover:scale-110 transition-transform origin-left">🛒</div>
             <div class="font-black text-2xl mb-1"><span class="i18n-bn">ডিজিটাল অ্যাসেট স্টোর</span><span class="i18n-en">Digital Asset Store</span></div>
-            <div class="text-white/90 text-sm mt-1"><span class="i18n-bn">ই-বুক ও স্টাডি মেটেরিয়াল ডাউনলোড করুন।</span><span class="i18n-en">Download E-books & Study Materials.</span></div>
+            <div class="text-white/90 text-sm mt-1"><span class="i18n-bn">ই-বুক ও স্টাডি মেটেরিয়াল স্বল্প মুল্যে ডাউনলোড করুন।</span><span class="i18n-en">Download E-books & Study Materials.</span></div>
           </div>
           <div class="mt-6 flex items-center gap-2 text-sm font-bold bg-white/10 w-fit px-4 py-2 rounded-lg backdrop-blur border border-white/20 group-hover:bg-white/20 transition">
             <span class="i18n-bn">স্টোরে যান</span><span class="i18n-en">Visit Store</span> 
@@ -264,6 +305,152 @@
           </div>
         </div>
       </a>
+    </div>
+  </section>
+
+  <!-- FREE DEMO TAB -->
+  <section id="tab-demo" class="tab-content">
+    <div class="text-center max-w-2xl mx-auto mb-8">
+      <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-3">Book a Free Demo Class</h2>
+      <p class="text-slate-500"><span class="i18n-bn">ফর্মটি পূরণ করে আপনার ডেমো ক্লাসের সিট বুক করুন।</span><span class="i18n-en">Fill out the form to secure your demo class seat.</span></p>
+    </div>
+
+    <div class="max-w-3xl mx-auto bg-white rounded-3xl shadow-premium border border-emerald-100 overflow-hidden">
+      <div class="demo-container" id="demo-registration-area">
+        <div class="brand-header">
+            <h1>English Spur</h1>
+            <div class="academy-sub">Online English Training Academy</div>
+            <div class="contact-info">
+                Kanaipur, Bantul, Bagnan, Howrah - 711312<br>
+                <div style="margin-top: 4px;"><strong>Contact:</strong> 9875340842 | <strong>E-mail:</strong> englishspur2020@gmail.com</div>
+            </div>
+        </div>
+
+        <form id="demoClassForm">
+            <div class="demo-badge-panel">
+                <h2>Free Demo Class Registration Form</h2>
+                <div class="meta-flex-row">
+                    <div class="meta-pill pill-id">Ticket No: <span id="dynamicFormId">Generating...</span></div>
+                    <div class="meta-pill pill-date">Date: <span id="dynamicRegDate">Locking...</span></div>
+                </div>
+            </div>
+            
+            <div class="section-title">Student Profile Details</div>
+            
+            <div class="form-grid">
+                <div class="form-group full-width">
+                    <label for="full-name">Full Name *</label>
+                    <input type="text" id="full-name" class="uppercase-input" placeholder="ENTER YOUR FULL NAME" oninput="this.value = this.value.toUpperCase();" required>
+                    <div class="snapshot-text-view" id="view-full-name"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" class="lowercase-input" placeholder="student@example.com" oninput="this.value = this.value.toLowerCase();" required>
+                    <div class="snapshot-text-view" id="view-email" style="text-transform: lowercase;"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">WhatsApp Number *</label>
+                    <input type="tel" id="phone" placeholder="10 DIGIT NUMBER" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
+                    <div class="snapshot-text-view" id="view-phone"></div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="occupation">What do you currently do? *</label>
+                    <select id="occupation" onchange="toggleConditionalOccupation(this.value)" required>
+                        <option value="" disabled selected>Select your current profile</option>
+                        <option value="STUDENT (SCHOOL)">STUDENT (SCHOOL)</option>
+                        <option value="STUDENT (COLLEGE / UNIVERSITY)">STUDENT (COLLEGE / UNIVERSITY)</option>
+                        <option value="JOB SEEKER">JOB SEEKER</option>
+                        <option value="WORKING PROFESSIONAL">WORKING PROFESSIONAL</option>
+                        <option value="BUSINESS OWNER">BUSINESS OWNER</option>
+                        <option value="HOUSEWIFE">HOUSEWIFE</option>
+                        <option value="OTHER">OTHER</option>
+                    </select>
+                    <div class="snapshot-text-view" id="view-occupation"></div>
+                    
+                    <div class="conditional-wrapper" id="other-occupation-wrapper">
+                        <div class="form-group" style="margin-top: 10px;">
+                            <label for="other-occupation-spec">Specify Occupation *</label>
+                            <input type="text" id="other-occupation-spec" class="uppercase-input" placeholder="PLEASE SPECIFY">
+                            <div class="snapshot-text-view" id="view-other-occupation-spec"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">Demo Session Preferences</div>
+            
+            <div class="form-grid">
+                <div class="form-group full-width">
+                    <label>Primary Reason for joining the Demo? *</label>
+                    <div class="preference-card-stack">
+                        <label class="radio-card-option">
+                            <input type="radio" name="reason" value="WANT TO EVALUATE SPOKEN ENGLISH INTERACTIVE TRAINING STYLE" required> WANT TO EVALUATE SPOKEN ENGLISH INTERACTIVE STYLE
+                        </label>
+                        <label class="radio-card-option">
+                            <input type="radio" name="reason" value="WANT TO UNDERSTAND ENGLISH GRAMMAR & FOUNDATION CURRICULUM"> WANT TO UNDERSTAND GRAMMAR & FOUNDATION
+                        </label>
+                        <label class="radio-card-option">
+                            <input type="radio" name="reason" value="WANT TO EXPERIENCE LIVE ONLINE CLASS TEACHING QUALITY"> WANT TO EXPERIENCE LIVE TEACHING QUALITY
+                        </label>
+                        <label class="radio-card-option">
+                            <input type="radio" name="reason" value="SEEKING PROFESSIONAL CAREER COUNSELING"> SEEKING CAREER COUNSELING
+                        </label>
+                    </div>
+                    <div class="snapshot-text-view" id="view-reason"></div>
+                </div>
+            </div>
+
+            <div class="section-title">Residential Address Details</div>
+            
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="addr-village">Vill / City *</label>
+                    <input type="text" id="addr-village" class="uppercase-input" placeholder="VILLAGE / CITY" oninput="this.value = this.value.toUpperCase();" required>
+                    <div class="snapshot-text-view" id="view-addr-village"></div>
+                </div>
+                <div class="form-group">
+                    <label for="addr-po">Post Office *</label>
+                    <input type="text" id="addr-po" class="uppercase-input" placeholder="POST OFFICE" oninput="this.value = this.value.toUpperCase();" required>
+                    <div class="snapshot-text-view" id="view-addr-po"></div>
+                </div>
+                <div class="form-group">
+                    <label for="addr-ps">Police Station *</label>
+                    <input type="text" id="addr-ps" class="uppercase-input" placeholder="POLICE STATION" oninput="this.value = this.value.toUpperCase();" required>
+                    <div class="snapshot-text-view" id="view-addr-ps"></div>
+                </div>
+                <div class="form-group">
+                    <label for="addr-dist">District *</label>
+                    <input type="text" id="addr-dist" class="uppercase-input" placeholder="DISTRICT" oninput="this.value = this.value.toUpperCase();" required>
+                    <div class="snapshot-text-view" id="view-addr-dist"></div>
+                </div>
+                <div class="form-group">
+                    <label for="addr-pin">Pin Code *</label>
+                    <input type="text" id="addr-pin" placeholder="6 DIGIT PIN" maxlength="6" oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
+                    <div class="snapshot-text-view" id="view-addr-pin"></div>
+                </div>
+            </div>
+
+            <!-- ACTION BUTTONS -->
+            <div class="flex flex-col gap-3 mt-8 w-full" id="action-buttons-wrapper">
+                <button type="button" onclick="processForm('share')" id="btnShareWhatsApp" class="w-full bg-brand text-white font-bold py-3.5 px-4 rounded-xl hover:bg-emerald-700 transition shadow-lg shadow-emerald-500/30 flex items-center justify-center gap-2 text-sm md:text-base">
+                    <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    <span>Share as PDF via WhatsApp</span>
+                </button>
+                
+                <button type="button" onclick="processForm('download')" id="btnDownloadOnly" class="w-full bg-slate-700 text-white font-bold py-3.5 px-4 rounded-xl hover:bg-slate-800 transition shadow-lg shadow-slate-500/30 flex items-center justify-center gap-2 text-sm md:text-base">
+                    <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    <span>Download PDF Only</span>
+                </button>
+
+                <div class="guide-text mt-2 text-sm text-slate-500 text-center bg-slate-50 p-3 rounded-lg border border-slate-100">
+                    ℹ️ <strong>নির্দেশনা:</strong> <b>Share</b> বাটনে ক্লিক করলে সোজা হোয়াটসঅ্যাপ ওপেন হবে এবং ফাইল অ্যাটাচ হয়ে যাবে। <b>Download</b> বাটনে ক্লিক করলে শুধু ফাইলটি সেভ হবে।
+                </div>
+            </div>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -295,10 +482,10 @@
     <div class="bg-white rounded-[2rem] p-8 md:p-12 shadow-premium border border-emerald-100 max-w-4xl mx-auto text-center relative overflow-hidden">
       <div class="absolute -top-10 -right-10 text-9xl text-emerald-50 opacity-50">”</div>
       <div class="text-5xl mb-6">🌟</div>
-      <h3 class="text-2xl font-bold text-slate-800 mb-4">Read what our students have to say!</h3>
+      <h3 class="text-2xl font-bold text-slate-800 mb-4">Listen, what some of our students say!</h3>
       <p class="text-slate-600 mb-8 max-w-lg mx-auto">Discover how English Spur has helped hundreds of learners overcome hesitation and speak English with confidence.</p>
       <a href="https://english-spur.github.io/Official-Website/testimonials.html" target="_blank" class="inline-flex items-center gap-2 bg-brand text-white font-bold px-8 py-3.5 rounded-xl hover:bg-emerald-700 transition shadow-lg shadow-emerald-500/30">
-        Read Testimonials <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+       Testimonials <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
       </a>
     </div>
   </section>
@@ -327,7 +514,6 @@
     </div>
     
     <div class="bg-white rounded-[2rem] p-8 md:p-12 shadow-premium border border-emerald-100 max-w-3xl mx-auto text-center relative overflow-hidden">
-      <!-- Background Decoration -->
       <div class="absolute -top-10 -right-10 w-40 h-40 bg-emerald-50 rounded-full blur-2xl -z-10"></div>
       
       <div class="text-6xl mb-6 animate-pulse">💖</div>
@@ -335,22 +521,19 @@
       <h3 class="text-2xl md:text-3xl font-black text-slate-800 mb-4">"শিক্ষাই আলো, শিক্ষাই শক্তি"</h3>
       
       <p class="text-slate-600 mb-8 max-w-xl mx-auto italic text-base md:text-lg leading-relaxed">
-        আপনার একটি ছোট্ট সাহায্য, একজন সুবিধাবঞ্চিত শিক্ষার্থীর জীবনের মোড় ঘুরিয়ে দিতে পারে। ইংরেজি স্পারের এই শিক্ষা যাত্রায় পাশে দাঁড়িয়ে একটি সুন্দর ও আলোকিত ভবিষ্যৎ গড়ার অংশীদার হোন।
+        আপনার একটি ছোট্ট সাহায্য, একজন সুবিধাবঞ্চিত শিক্ষার্থীর জীবনের মোড় ঘুরিয়ে দিতে পারে। ইংলিশ স্পারের এই শিক্ষা যাত্রায় পাশে দাঁড়িয়ে একটি সুন্দর ও আলোকিত ভবিষ্যৎ গড়ার অংশীদার হোন।
       </p>
 
-      <!-- QR Code Image -->
       <div class="inline-block bg-emerald-50/50 p-6 rounded-3xl border-2 border-dashed border-emerald-200 mb-6 transition hover:bg-emerald-50">
         <p class="text-sm font-bold text-slate-500 mb-4 uppercase tracking-widest">Scan to Donate via UPI</p>
         <img src="SOVAN KAPRI GOOGLE PAY.jpg" alt="Sovan Kapri Google Pay QR Code" class="w-72 h-72 md:w-96 md:h-96 object-contain rounded-xl mx-auto shadow-md bg-white p-3">
       </div>
 
-      <!-- UPI ID Copy Feature -->
       <p class="text-slate-500 text-sm mb-3">Or you can pay directly using UPI ID:</p>
       <button onclick="navigator.clipboard.writeText('sovankapri-1@okhdfcbank'); alert('UPI ID Copied successfully!')" class="group inline-flex items-center gap-2 bg-slate-100 hover:bg-emerald-100 border border-slate-200 hover:border-emerald-300 text-slate-700 font-mono font-bold px-5 py-2.5 rounded-xl transition-all shadow-sm">
         sovankapri-1@okhdfcbank
         <span class="text-xs bg-white px-2 py-1 rounded text-slate-400 group-hover:text-emerald-600 shadow-sm transition">Copy</span>
       </button>
-
     </div>
   </section>
 
@@ -506,23 +689,16 @@
 
 <!-- GALLERY FULL SCREEN LIGHTBOX -->
 <div id="galleryModal" class="hidden fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex flex-col items-center justify-center p-4 sm:p-8" onclick="if(event.target===this)closeGallery()">
-  
-  <!-- Close Button -->
   <button onclick="closeGallery()" class="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 text-white shadow-md flex items-center justify-center hover:bg-white/20 transition z-10">
     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
   </button>
-
-  <!-- Full Image -->
   <img id="gmImg" class="max-w-full max-h-[80vh] object-contain rounded-xl shadow-2xl animate-fadeIn" alt="">
-
-  <!-- Info & Video Button -->
   <div class="mt-6 text-center max-w-3xl animate-fadeIn">
     <h3 id="gmTitle" class="text-lg md:text-xl font-bold text-white mb-4"></h3>
     <a id="gmVideoBtn" href="#" target="_blank" class="hidden inline-flex items-center justify-center gap-2 bg-brand text-white font-bold px-6 py-2.5 rounded-xl hover:bg-emerald-600 transition shadow-lg shadow-brand/30">
       <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Watch Video
     </a>
   </div>
-
 </div>
 
 <!-- FOOTER -->
@@ -585,7 +761,7 @@
   const sites = [
     { name: 'Official Website', url: 'https://english-spur.github.io/Official-Website/', icon: '🌐' },
     { name: 'Admission Site', url: 'https://english-spur.github.io/admission-site/', icon: '🎓' },
-    { name: 'Portfolio', url: 'https://english-spur.github.io/sovan-portfolio/', icon: '💼' },
+    { name: 'Digital Store', url: 'https://english-spur.github.io/Official-Website/Digital%20Store.html', icon: '🛒' },
     { name: '1000 Sentences', url: 'https://english-spur.github.io/1000-daily-use-sentences/', icon: '📚' },
     { name: 'Word Puzzle', url: 'https://english-spur.github.io/Word-Puzzle/', icon: '🧩' },
     { name: 'ES Radio', url: 'https://english-spur.github.io/ES-Radio/', icon: '📻' },
@@ -646,6 +822,191 @@
     document.getElementById('galleryModal').classList.add('hidden');
     document.body.style.overflow = '';
   };
+
+  // ---- DEMO FORM LOGIC ----
+  let officialFormId = "";
+  window.addEventListener('DOMContentLoaded', () => {
+      const now = new Date();
+      officialFormId = `ES-DEMO-${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}${String(now.getHours()).padStart(2, '0')}${String(now.getMinutes()).padStart(2, '0')}${String(now.getSeconds()).padStart(2, '0')}`;
+      document.getElementById('dynamicFormId').innerText = officialFormId;
+      
+      const day = String(now.getDate()).padStart(2, '0');
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const year = now.getFullYear();
+      document.getElementById('dynamicRegDate').innerText = `${day}-${month}-${year}`;
+  });
+
+  window.toggleConditionalOccupation = (value) => {
+      const otherWrapper = document.getElementById('other-occupation-wrapper');
+      const otherInput = document.getElementById('other-occupation-spec');
+      
+      if (value === "OTHER") {
+          otherWrapper.style.display = "block";
+          otherInput.setAttribute("required", "required");
+      } else {
+          otherWrapper.style.display = "none";
+          otherInput.removeAttribute("required");
+          otherInput.value = "";
+      }
+  }
+
+  window.processForm = function(action) {
+      const form = document.getElementById('demoClassForm');
+      if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+      }
+
+      const btnShare = document.getElementById('btnShareWhatsApp');
+      const btnDownload = document.getElementById('btnDownloadOnly');
+      const originalShareText = btnShare.innerHTML;
+      const originalDownloadText = btnDownload.innerHTML;
+
+      btnShare.disabled = true;
+      btnDownload.disabled = true;
+      if (action === 'share') {
+          btnShare.innerHTML = '<svg class="animate-spin w-5 h-5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Generating...';
+      } else {
+          btnDownload.innerHTML = '<svg class="animate-spin w-5 h-5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Generating...';
+      }
+
+      const fullName = document.getElementById('full-name').value.toUpperCase();
+      const email = document.getElementById('email').value.toLowerCase();
+      const phone = document.getElementById('phone').value;
+      const occupationSelect = document.getElementById('occupation').value;
+      const village = document.getElementById('addr-village').value.toUpperCase();
+      const po = document.getElementById('addr-po').value.toUpperCase();
+      const ps = document.getElementById('addr-ps').value.toUpperCase();
+      const dist = document.getElementById('addr-dist').value.toUpperCase();
+      const pin = document.getElementById('addr-pin').value;
+
+      if (occupationSelect === "OTHER") {
+          const otherSpec = document.getElementById('other-occupation-spec').value.trim();
+          if(otherSpec.length < 3) {
+              alert("Please specify your current occupation profile.");
+              btnShare.disabled = false;
+              btnDownload.disabled = false;
+              btnShare.innerHTML = originalShareText;
+              btnDownload.innerHTML = originalDownloadText;
+              return;
+          }
+          document.getElementById('view-other-occupation-spec').innerText = otherSpec.toUpperCase();
+          document.getElementById('other-occupation-wrapper').classList.add('active-snapshot-field');
+      } else {
+          document.getElementById('other-occupation-wrapper').classList.remove('active-snapshot-field');
+      }
+
+      document.getElementById('view-full-name').innerText = fullName;
+      document.getElementById('view-email').innerText = email;
+      document.getElementById('view-phone').innerText = phone;
+      document.getElementById('view-occupation').innerText = occupationSelect;
+      
+      const checkedReason = document.querySelector('input[name="reason"]:checked');
+      document.getElementById('view-reason').innerText = checkedReason ? checkedReason.value : '';
+
+      document.getElementById('view-addr-village').innerText = village;
+      document.getElementById('view-addr-po').innerText = po;
+      document.getElementById('view-addr-ps').innerText = ps;
+      document.getElementById('view-addr-dist').innerText = dist;
+      document.getElementById('view-addr-pin').innerText = pin;
+
+      const element = document.getElementById('demo-registration-area');
+      const buttonsWrapper = document.getElementById('action-buttons-wrapper');
+      
+      element.classList.add('snapshot-mode');
+      buttonsWrapper.style.display = 'none';
+
+      html2canvas(element, {
+          scale: 2, 
+          useCORS: true,
+          scrollY: 0,
+          scrollX: 0,
+          windowWidth: 750,
+          logging: false
+      }).then(canvas => {
+          element.classList.remove('snapshot-mode');
+          buttonsWrapper.style.display = 'flex';
+
+          const { jsPDF } = window.jspdf;
+          const doc = new jsPDF('p', 'mm', 'a4');
+          
+          const imgData = canvas.toDataURL('image/jpeg', 0.85); 
+          const pdfWidth = doc.internal.pageSize.getWidth();
+          const pageHeight = doc.internal.pageSize.getHeight();
+          
+          let pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+          let finalWidth = pdfWidth;
+          let finalHeight = pdfHeight;
+
+          if (pdfHeight > pageHeight) {
+              finalHeight = pageHeight;
+              finalWidth = (canvas.width * finalHeight) / canvas.height;
+          }
+
+          const xOffset = (pdfWidth - finalWidth) / 2;
+          const yOffset = 0; 
+
+          doc.addImage(imgData, 'JPEG', xOffset, yOffset, finalWidth, finalHeight);
+          
+          const fileName = `ES-Demo-${fullName.replace(/\s+/g, '_')}.pdf`;
+
+          if (action === 'share') {
+              const pdfBlob = doc.output('blob');
+              const pdfFile = new File([pdfBlob], fileName, { type: "application/pdf" });
+
+              const whatsappMessage = `🚨 *FREE DEMO CLASS REGISTRATION* 🚨\n\nনমস্কার *শোভন কাপড়ী*, আমি ফ্রি ডেমো ক্লাসের জন্য সফলভাবে রেজিস্ট্রেশন করেছি।\n\n*Ticket No:* ${officialFormId}\n*Name:* ${fullName}\n\nআমি আমার ডেমো ক্লাস রেজিস্ট্রেশনের PDF ফাইলটি সংযুক্ত করে পাঠাচ্ছি। অনুগ্রহ করে আমার ডেমো ক্লাস সেশনটি বুক করুন।`;
+
+              if (navigator.canShare && navigator.canShare({ files: [pdfFile] })) {
+                  navigator.share({
+                      files: [pdfFile],
+                      title: 'Free Demo Registration',
+                      text: whatsappMessage
+                  }).then(() => {
+                      // Share successful
+                  }).catch((error) => {
+                      console.log('Share failed', error);
+                      // Fallback to download
+                      downloadPDF(doc, fileName);
+                  });
+              } else {
+                  // Fallback to download
+                  downloadPDF(doc, fileName);
+                  setTimeout(() => {
+                      const encodedMsg = encodeURIComponent(whatsappMessage);
+                      window.open(`https://wa.me/919875340842?text=${encodedMsg}`, '_blank');
+                  }, 1000);
+              }
+          } else {
+              // ডাউনলোড বাটন লজিক
+              downloadPDF(doc, fileName);
+          }
+
+      }).catch(err => {
+          console.error(err);
+          alert("PDF তৈরিতে সমস্যা হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।");
+      }).finally(() => {
+          element.classList.remove('snapshot-mode');
+          buttonsWrapper.style.display = 'flex';
+          btnShare.disabled = false;
+          btnDownload.disabled = false;
+          btnShare.innerHTML = originalShareText;
+          btnDownload.innerHTML = originalDownloadText;
+      });
+  }
+
+  // Helper function for Downloading PDF
+  function downloadPDF(doc, fileName) {
+      const pdfBlob = doc.output('blob');
+      const blobUrl = URL.createObjectURL(pdfBlob);
+      const downloadLink = document.createElement('a');
+      downloadLink.href = blobUrl;
+      downloadLink.download = fileName;
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+      setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
+      alert("PDF Downloaded Successfully!");
+  }
 </script>
 
 <!-- FIREBASE INIT & FETCH DATA -->
@@ -737,7 +1098,10 @@
         return `
           <div class="${t.bg} border ${t.border} rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
             <div>
-              <span class="inline-block ${t.tag} text-xs font-black px-3 py-1 rounded-full mb-4 tracking-wider">${course.audience}</span>
+              <div class="flex items-center justify-between mb-4">
+                <span class="inline-block ${t.tag} text-xs font-black px-3 py-1 rounded-full tracking-wider">${course.audience}</span>
+                ${course.isNew ? `<span class="inline-block bg-orange-500 text-white text-[10px] font-black px-2.5 py-1 rounded-full shadow-sm animate-pulse">NEW</span>` : ''}
+              </div>
               <h3 class="text-xl md:text-2xl font-black text-slate-800 leading-snug group-hover:opacity-80 transition-colors">${course.title}</h3>
             </div>
             <a href="${course.link}" target="_blank" class="mt-8 w-full flex items-center justify-center gap-2 bg-white ${t.text} font-bold px-4 py-3.5 rounded-xl ${t.hover} group-hover:text-white transition-all shadow-sm">
