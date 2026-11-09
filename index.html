@@ -102,37 +102,40 @@
 
 <!-- HEADER -->
 <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-lg border-b border-emerald-100 shadow-sm transition-all">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-3">
-    <button onclick="switchTab('home')" class="flex items-center gap-2 md:gap-3 group">
-      <img src="logo.png" alt="English Spur Logo" class="h-10 md:h-12 w-auto object-contain group-hover:scale-105 transition-transform drop-shadow-sm">
-      <div class="text-xl md:text-2xl font-black tracking-tight flex items-center gap-1">
+  <div class="max-w-[1400px] mx-auto px-3 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between gap-2">
+    
+    <!-- Logo -->
+    <button onclick="switchTab('home')" class="flex items-center gap-1.5 sm:gap-2 shrink-0 group">
+      <img src="logo.png" alt="English Spur Logo" class="h-8 sm:h-10 md:h-12 w-auto object-contain group-hover:scale-105 transition-transform drop-shadow-sm">
+      <div class="text-lg sm:text-xl md:text-2xl font-black tracking-tight flex items-center gap-1">
         <span class="text-emerald-800 group-hover:text-emerald-600 transition">ENGLISH</span> 
         <span class="text-emerald-500 group-hover:text-emerald-400 transition">SPUR</span>
       </div>
     </button>
     
     <!-- Desktop Menu -->
-    <nav class="hidden xl:flex items-center gap-3">
-      <button class="nav-tab active text-sm font-semibold text-slate-500 hover:text-brand transition" data-tab="home">Home</button>
-      <button class="nav-tab text-sm font-semibold text-slate-500 hover:text-brand transition" data-tab="courses">Courses</button>
-      <button class="nav-tab text-sm font-bold text-orange-500 hover:text-orange-600 transition" data-tab="demo">Book Free Demo</button>
-      <button class="nav-tab text-sm font-semibold text-slate-500 hover:text-brand transition" data-tab="gallery">Gallery</button>
-      <button class="nav-tab text-sm font-semibold text-slate-500 hover:text-brand transition" data-tab="testimonials">Testimonials</button>
-      <button class="nav-tab text-sm font-semibold text-slate-500 hover:text-brand transition" data-tab="career">Career</button>
-      <button class="nav-tab text-sm font-semibold text-slate-500 hover:text-brand transition" data-tab="donation">Donation</button>
-      <button class="nav-tab text-sm font-semibold text-slate-500 hover:text-brand transition" data-tab="social">Social</button>
-      <button class="nav-tab text-sm font-semibold text-slate-500 hover:text-brand transition" data-tab="portfolio">Portfolio</button>
-      <button class="nav-tab text-sm font-semibold text-slate-500 hover:text-brand transition" data-tab="contact">Contact</button>
-      <a href="https://english-spur.github.io/Official-Website/index.html" target="_blank" class="text-sm font-bold text-white bg-brand px-3 py-1.5 rounded-full hover:bg-emerald-700 shadow-md hover:shadow-lg transition flex items-center gap-1 ml-2">
-        About Us <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-      </a>
+    <nav class="hidden xl:flex items-center gap-4">
+      <button class="nav-tab active text-sm font-semibold text-slate-500 hover:text-brand transition whitespace-nowrap" data-tab="home">Home</button>
+      <button class="nav-tab text-sm font-semibold text-slate-500 hover:text-brand transition whitespace-nowrap" data-tab="courses">Courses</button>
+      <button class="nav-tab text-sm font-bold text-orange-500 hover:text-orange-600 transition whitespace-nowrap" data-tab="demo">Book Free Demo</button>
+      <button class="nav-tab text-sm font-semibold text-slate-500 hover:text-brand transition whitespace-nowrap" data-tab="gallery">Gallery</button>
+      <button class="nav-tab text-sm font-semibold text-slate-500 hover:text-brand transition whitespace-nowrap" data-tab="testimonials">Testimonials</button>
+      <button class="nav-tab text-sm font-semibold text-slate-500 hover:text-brand transition whitespace-nowrap" data-tab="career">Career</button>
+      <button class="nav-tab text-sm font-semibold text-slate-500 hover:text-brand transition whitespace-nowrap" data-tab="donation">Donation</button>
+      <button class="nav-tab text-sm font-semibold text-slate-500 hover:text-brand transition whitespace-nowrap" data-tab="social">Social</button>
+      <button class="nav-tab text-sm font-semibold text-slate-500 hover:text-brand transition whitespace-nowrap" data-tab="portfolio">Portfolio</button>
+      <button class="nav-tab text-sm font-semibold text-slate-500 hover:text-brand transition whitespace-nowrap" data-tab="contact">Contact</button>
     </nav>
 
-    <div class="flex items-center gap-3">
-      <button id="langToggle" class="lang-toggle px-3 py-1.5 text-xs font-bold rounded-full border border-emerald-200 text-emerald-800 hover:bg-emerald-50 transition">
+    <!-- Right Side Controls -->
+    <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+      <a href="https://english-spur.github.io/Official-Website/index.html" target="_blank" class="hidden xl:flex text-sm font-bold text-white bg-brand px-4 py-2 rounded-full hover:bg-emerald-700 shadow-md hover:shadow-lg transition items-center gap-1 whitespace-nowrap">
+        About Us
+      </a>
+      <button id="langToggle" class="lang-toggle px-2.5 py-1.5 text-xs font-bold rounded-full border border-emerald-200 text-emerald-800 hover:bg-emerald-50 transition whitespace-nowrap">
         <span class="bn-active">বাংলা</span><span class="en-active">EN</span>
       </button>
-      <button id="mobileMenuBtn" class="xl:hidden p-2 rounded-lg text-slate-600 hover:bg-emerald-50 transition focus:outline-none">
+      <button id="mobileMenuBtn" class="xl:hidden p-1.5 sm:p-2 rounded-lg text-slate-600 hover:bg-emerald-50 transition focus:outline-none">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </div>
@@ -151,7 +154,7 @@
     <button class="nav-tab block w-full text-left px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-600 hover:bg-emerald-50" data-tab="portfolio">Portfolio</button>
     <button class="nav-tab block w-full text-left px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-600 hover:bg-emerald-50" data-tab="contact">Contact</button>
     <a href="https://english-spur.github.io/Official-Website/index.html" target="_blank" class="flex items-center justify-between w-full px-4 py-3 rounded-xl text-sm font-bold text-white bg-brand hover:bg-emerald-700 mt-2">
-      About English Spur <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+      About English Spur
     </a>
   </div>
 </header>
@@ -161,53 +164,55 @@
   <svg class="w-6 h-6 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
 </button>
 
-<main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 min-h-screen">
+<main class="max-w-7xl mx-auto px-3 sm:px-6 py-6 sm:py-8 min-h-screen">
 
   <!-- HOME TAB -->
   <section id="tab-home" class="tab-content active">
     
     <!-- HERO SECTION -->
-    <div class="relative bg-[#022c22] rounded-[2.5rem] overflow-hidden p-8 md:p-14 lg:p-20 text-white shadow-2xl border border-emerald-900/50">
-      <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/20 rounded-full mix-blend-screen filter blur-[100px] opacity-70 animate-pulse"></div>
-      <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-lime-500/10 rounded-full mix-blend-screen filter blur-[100px] opacity-50"></div>
+    <div class="relative bg-[#022c22] rounded-3xl md:rounded-[2.5rem] overflow-hidden p-5 sm:p-8 md:p-14 lg:p-20 text-white shadow-2xl border border-emerald-900/50">
+      <div class="absolute top-0 right-0 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-emerald-500/20 rounded-full mix-blend-screen filter blur-[80px] sm:blur-[100px] opacity-70 animate-pulse"></div>
+      <div class="absolute bottom-0 left-0 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-lime-500/10 rounded-full mix-blend-screen filter blur-[80px] sm:blur-[100px] opacity-50"></div>
       
-      <div class="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
         <div class="text-center lg:text-left">
-          <div class="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 text-emerald-300 px-5 py-2 rounded-full text-xs font-bold tracking-widest mb-6 shadow-inner">
+          <div class="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 text-emerald-300 px-4 py-1.5 sm:px-5 sm:py-2 rounded-full text-[10px] sm:text-xs font-bold tracking-widest mb-4 sm:mb-6 shadow-inner">
             <span class="w-2 h-2 rounded-full bg-lime-400 animate-ping"></span> 
             <span class="w-2 h-2 rounded-full bg-lime-400 absolute"></span>
             SINCE 2020
           </div>
           
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.15] mb-6 tracking-tight">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-[1.2] sm:leading-[1.15] mb-4 sm:mb-6 tracking-tight">
             <span class="i18n-bn">ইংরেজি ও আধুনিক স্কিলে <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-lime-300">দক্ষ হোন</span></span>
             <span class="i18n-en">Master English & <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-lime-300">Modern Skills</span></span>
           </h1>
           
-          <p class="text-emerald-100/70 text-base md:text-lg mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
+          <p class="text-emerald-100/70 text-sm sm:text-base md:text-lg mb-6 sm:mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
             <span class="i18n-bn">স্পোকেন ইংলিশ থেকে শুরু করে AI, ভাইব কোডিং,কম্পিউটার, গ্রাফিক্স ডিজাইন—সব বয়সের জন্য প্র্যাকটিক্যাল ও প্রফেশনাল ট্রেনিং।</span>
             <span class="i18n-en">From Spoken English to AI, Vibe Coding, Computer, Graphics Design—practical & professional training for all ages.</span>
           </p>
           
-          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-            <a href="https://english-spur.github.io/admission-site/" target="_blank" rel="noopener" class="w-full sm:w-auto bg-gradient-to-r from-emerald-500 to-lime-500 text-emerald-950 font-black px-8 py-3.5 rounded-2xl hover:scale-105 transition-transform duration-300 shadow-[0_0_40px_-10px_rgba(16,185,129,0.5)] flex items-center justify-center gap-2 text-lg">
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4">
+            <a href="https://english-spur.github.io/admission-site/" target="_blank" rel="noopener" class="w-full sm:w-auto bg-gradient-to-r from-emerald-500 to-lime-500 text-emerald-950 font-black px-6 py-3 sm:px-8 sm:py-3.5 rounded-xl sm:rounded-2xl hover:scale-105 transition-transform duration-300 shadow-[0_0_40px_-10px_rgba(16,185,129,0.5)] flex items-center justify-center text-base sm:text-lg">
               <span class="i18n-bn">ভর্তি হোন</span><span class="i18n-en">Join Now</span> 
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </a>
-            <button onclick="switchTab('demo')" class="w-full sm:w-auto bg-white/5 backdrop-blur-md border border-white/10 text-white font-bold px-8 py-3.5 rounded-2xl hover:bg-white/10 transition-all flex items-center justify-center gap-2 text-lg">
+            <button onclick="switchTab('demo')" class="w-full sm:w-auto bg-white/5 backdrop-blur-md border border-white/10 text-white font-bold px-6 py-3 sm:px-8 sm:py-3.5 rounded-xl sm:rounded-2xl hover:bg-white/10 transition-all flex items-center justify-center text-base sm:text-lg">
               <span class="i18n-bn">ফ্রি ডেমো ক্লাস</span><span class="i18n-en">Free Demo Class</span>
+            </button>
+            <button onclick="switchTab('courses')" class="w-full sm:w-auto bg-white/5 backdrop-blur-md border border-white/10 text-white font-bold px-6 py-3 sm:px-8 sm:py-3.5 rounded-xl sm:rounded-2xl hover:bg-white/10 transition-all flex items-center justify-center text-base sm:text-lg">
+              <span class="i18n-bn">কোর্স দেখুন</span><span class="i18n-en">Explore Our Courses</span>
             </button>
           </div>
         </div>
 
-        <div class="relative block mt-12 lg:mt-0 max-w-sm mx-auto lg:max-w-none w-full">
+        <div class="relative block mt-8 sm:mt-12 lg:mt-0 max-w-sm mx-auto lg:max-w-none w-full">
           <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500 to-lime-400 rounded-3xl blur-2xl opacity-20 animate-pulse"></div>
-          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop" alt="Students learning at English Spur" class="relative z-10 rounded-[2rem] shadow-2xl border border-white/10 object-cover w-full h-64 sm:h-80 lg:h-[420px]">
-          <div class="absolute bottom-4 left-4 md:-bottom-6 md:-left-6 bg-white/95 backdrop-blur-md p-3 md:p-4 rounded-2xl shadow-xl z-20 flex items-center gap-3 md:gap-4 border border-emerald-50">
-             <div class="w-10 h-10 md:w-12 md:h-12 bg-emerald-100 rounded-full flex items-center justify-center text-xl md:text-2xl">🌟</div>
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop" alt="Students learning at English Spur" class="relative z-10 rounded-2xl sm:rounded-[2rem] shadow-2xl border border-white/10 object-cover w-full h-56 sm:h-80 lg:h-[420px]">
+          <div class="absolute bottom-3 left-3 md:-bottom-6 md:-left-6 bg-white/95 backdrop-blur-md p-2.5 md:p-4 rounded-xl md:rounded-2xl shadow-xl z-20 flex items-center gap-2 md:gap-4 border border-emerald-50">
+             <div class="w-8 h-8 md:w-12 md:h-12 bg-emerald-100 rounded-full flex items-center justify-center text-lg md:text-2xl">🌟</div>
              <div>
-                <p class="text-xs md:text-sm font-black text-slate-800">Top Rated</p>
-                <p class="text-[10px] md:text-xs text-slate-500 font-semibold">Online Academy</p>
+                <p class="text-[10px] md:text-sm font-black text-slate-800">Top Rated</p>
+                <p class="text-[8px] md:text-xs text-slate-500 font-semibold">Online Academy</p>
              </div>
           </div>
         </div>
@@ -215,47 +220,46 @@
     </div>
 
     <!-- FLOATING STATS CARDS -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 -mt-10 md:-mt-12 relative z-20 px-4 md:px-12">
-      <div class="bg-white/90 backdrop-blur-xl rounded-3xl p-6 text-center shadow-xl border border-white hover:-translate-y-2 transition-transform duration-300">
-        <div class="w-14 h-14 mx-auto bg-emerald-100 rounded-2xl flex items-center justify-center text-2xl mb-4 shadow-inner">🎓</div>
-        <div class="text-3xl font-black text-slate-800">500+</div>
-        <div class="text-sm font-bold text-slate-500 mt-1 uppercase tracking-wider"><span class="i18n-bn">সফল শিক্ষার্থী</span><span class="i18n-en">Students</span></div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-5 -mt-6 md:-mt-12 relative z-20 px-2 sm:px-4 md:px-12">
+      <div class="bg-white/90 backdrop-blur-xl rounded-2xl md:rounded-3xl p-4 md:p-6 text-center shadow-xl border border-white hover:-translate-y-2 transition-transform duration-300">
+        <div class="w-10 h-10 md:w-14 md:h-14 mx-auto bg-emerald-100 rounded-xl md:rounded-2xl flex items-center justify-center text-xl md:text-2xl mb-2 md:mb-4 shadow-inner">🎓</div>
+        <div class="text-2xl md:text-3xl font-black text-slate-800">500+</div>
+        <div class="text-xs md:text-sm font-bold text-slate-500 mt-1 uppercase tracking-wider"><span class="i18n-bn">সফল শিক্ষার্থী</span><span class="i18n-en">Students</span></div>
       </div>
-      <div class="bg-white/90 backdrop-blur-xl rounded-3xl p-6 text-center shadow-xl border border-white hover:-translate-y-2 transition-transform duration-300">
-        <div class="w-14 h-14 mx-auto bg-lime-100 rounded-2xl flex items-center justify-center text-2xl mb-4 shadow-inner">📅</div>
-        <div class="text-3xl font-black text-slate-800">6+</div>
-        <div class="text-sm font-bold text-slate-500 mt-1 uppercase tracking-wider"><span class="i18n-bn">বছরের অভিজ্ঞতা</span><span class="i18n-en">Years Excellence</span></div>
+      <div class="bg-white/90 backdrop-blur-xl rounded-2xl md:rounded-3xl p-4 md:p-6 text-center shadow-xl border border-white hover:-translate-y-2 transition-transform duration-300">
+        <div class="w-10 h-10 md:w-14 md:h-14 mx-auto bg-lime-100 rounded-xl md:rounded-2xl flex items-center justify-center text-xl md:text-2xl mb-2 md:mb-4 shadow-inner">📅</div>
+        <div class="text-2xl md:text-3xl font-black text-slate-800">6+</div>
+        <div class="text-xs md:text-sm font-bold text-slate-500 mt-1 uppercase tracking-wider"><span class="i18n-bn">বছরের অভিজ্ঞতা</span><span class="i18n-en">Years Excellence</span></div>
       </div>
-      <div class="bg-white/90 backdrop-blur-xl rounded-3xl p-6 text-center shadow-xl border border-white hover:-translate-y-2 transition-transform duration-300">
-        <div class="w-14 h-14 mx-auto bg-teal-100 rounded-2xl flex items-center justify-center text-2xl mb-4 shadow-inner">🎥</div>
-        <div class="text-3xl font-black text-slate-800">4000+</div>
-        <div class="text-sm font-bold text-slate-500 mt-1 uppercase tracking-wider"><span class="i18n-bn">লাইভ ক্লাস</span><span class="i18n-en">Live Classes</span></div>
+      <div class="bg-white/90 backdrop-blur-xl rounded-2xl md:rounded-3xl p-4 md:p-6 text-center shadow-xl border border-white hover:-translate-y-2 transition-transform duration-300">
+        <div class="w-10 h-10 md:w-14 md:h-14 mx-auto bg-teal-100 rounded-xl md:rounded-2xl flex items-center justify-center text-xl md:text-2xl mb-2 md:mb-4 shadow-inner">🎥</div>
+        <div class="text-2xl md:text-3xl font-black text-slate-800">4000+</div>
+        <div class="text-xs md:text-sm font-bold text-slate-500 mt-1 uppercase tracking-wider"><span class="i18n-bn">লাইভ ক্লাস</span><span class="i18n-en">Live Classes</span></div>
       </div>
     </div>
 
     <!-- JOIN COMMUNITY BANNER -->
-    <div class="mt-12 relative overflow-hidden bg-gradient-to-r from-emerald-900 to-[#022c22] rounded-3xl p-1">
+    <div class="mt-8 sm:mt-12 relative overflow-hidden bg-gradient-to-r from-emerald-900 to-[#022c22] rounded-2xl sm:rounded-3xl p-1">
       <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-      <div class="bg-emerald-900/40 backdrop-blur-sm rounded-[1.4rem] p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
-        <div class="flex flex-col md:flex-row items-center gap-5 text-center md:text-left">
-          <div class="w-16 h-16 bg-gradient-to-br from-emerald-400 to-lime-400 rounded-2xl flex items-center justify-center text-3xl shadow-lg shrink-0 transform rotate-3 hover:rotate-0 transition">🤝</div>
+      <div class="bg-emerald-900/40 backdrop-blur-sm rounded-xl sm:rounded-[1.4rem] p-5 sm:p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-5 md:gap-6 relative z-10">
+        <div class="flex flex-col md:flex-row items-center gap-4 md:gap-5 text-center md:text-left">
+          <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-emerald-400 to-lime-400 rounded-xl sm:rounded-2xl flex items-center justify-center text-2xl sm:text-3xl shadow-lg shrink-0 transform rotate-3 hover:rotate-0 transition">🤝</div>
           <div>
-            <h3 class="text-xl md:text-2xl font-black text-white"><span class="i18n-bn">আমাদের কমিউনিটিতে যোগ দিন</span><span class="i18n-en">Join Our Community</span></h3>
-            <p class="text-emerald-200/80 text-sm md:text-base mt-1 font-medium"><span class="i18n-bn">ভবিষ্যতের সব আপডেট, ক্লাস ও টিপস সবার আগে পেতে যুক্ত থাকুন।</span><span class="i18n-en">Stay connected to get all future updates, classes & tips first.</span></p>
+            <h3 class="text-lg sm:text-xl md:text-2xl font-black text-white"><span class="i18n-bn">আমাদের কমিউনিটিতে যোগ দিন</span><span class="i18n-en">Join Our Community</span></h3>
+            <p class="text-emerald-200/80 text-xs sm:text-sm md:text-base mt-1 font-medium"><span class="i18n-bn">ভবিষ্যতের সব আপডেট, ক্লাস ও টিপস সবার আগে পেতে যুক্ত থাকুন।</span><span class="i18n-en">Stay connected to get all future updates, classes & tips first.</span></p>
           </div>
         </div>
-        <a href="https://english-spur.github.io/Official-Website/whgroup.html" target="_blank" class="w-full md:w-auto bg-white text-emerald-900 font-black px-8 py-3.5 rounded-xl hover:bg-emerald-50 transition shadow-xl text-center shrink-0 flex items-center justify-center gap-2 group">
+        <a href="https://english-spur.github.io/Official-Website/whgroup.html" target="_blank" class="w-full md:w-auto bg-white text-emerald-900 font-black px-6 py-3 sm:px-8 sm:py-3.5 rounded-xl hover:bg-emerald-50 transition shadow-xl text-center shrink-0 flex items-center justify-center text-sm sm:text-base">
           <span class="i18n-bn">যোগ দিন</span><span class="i18n-en">Join Now</span> 
-          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
       </div>
     </div>
 
     <!-- OTHER SITES (APP LAUNCHER STYLE) -->
-    <div class="mt-16 mb-8">
-      <div class="flex items-center justify-between mb-6">
-        <h2 class="text-2xl md:text-3xl font-black text-slate-800 tracking-tight"><span class="i18n-bn">আমাদের অন্যান্য সাইট এবং কিছু ওয়েব অ্যাপস</span><span class="i18n-en">Explore Our Ecosystem & Some Web Apps</span></h2>
-        <div class="h-1 flex-1 bg-gradient-to-r from-emerald-100 to-transparent ml-6 rounded-full"></div>
+    <div class="mt-12 sm:mt-16 mb-8">
+      <div class="flex items-center justify-between mb-4 sm:mb-6">
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-black text-slate-800 tracking-tight"><span class="i18n-bn">আমাদের অন্যান্য সাইট এবং কিছু ওয়েব অ্যাপস</span><span class="i18n-en">Explore Our Ecosystem & Some Web Apps</span></h2>
+        <div class="h-1 flex-1 bg-gradient-to-r from-emerald-100 to-transparent ml-4 sm:ml-6 rounded-full hidden sm:block"></div>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5" id="homeSites"></div>
     </div>
@@ -264,9 +268,9 @@
 
   <!-- COURSES TAB (DYNAMIC FROM FIREBASE) -->
   <section id="tab-courses" class="tab-content">
-    <div class="text-center max-w-2xl mx-auto mb-10">
-      <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-3"><span class="i18n-bn">আমাদের কোর্সসমূহ</span><span class="i18n-en">Our Courses</span></h2>
-      <p class="text-slate-500"><span class="i18n-bn">বাংলা-বান্ধব লাইভ ক্লাসে আত্মবিশ্বাসের সাথে ইংরেজি এবং অন্যান্য স্কিল শিখুন</span><span class="i18n-en">Learn English and Other Skills confidently with Bengali-friendly live classes</span></p>
+    <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-slate-800 mb-3"><span class="i18n-bn">আমাদের কোর্সসমূহ</span><span class="i18n-en">Our Courses</span></h2>
+      <p class="text-sm sm:text-base text-slate-500"><span class="i18n-bn">বাংলা-বান্ধব লাইভ ক্লাসে আত্মবিশ্বাসের সাথে ইংরেজি এবং অন্যান্য স্কিল শিখুন</span><span class="i18n-en">Learn English and Other Skills confidently with Bengali-friendly live classes</span></p>
     </div>
 
     <div class="max-w-6xl mx-auto">
@@ -274,34 +278,32 @@
         <svg class="animate-spin mx-auto h-8 w-8 text-brand mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
         কোর্স লোড হচ্ছে...
       </div>
-      <div id="coursesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+      <div id="coursesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"></div>
     </div>
 
-    <div class="mt-12 grid md:grid-cols-2 gap-5 max-w-6xl mx-auto">
-      <a href="https://english-spur.github.io/admission-site/" target="_blank" rel="noopener" class="group relative overflow-hidden bg-gradient-to-br from-emerald-600 to-teal-800 rounded-3xl p-8 text-white hover:shadow-2xl hover:shadow-emerald-600/30 transition-all duration-300">
+    <div class="mt-8 sm:mt-12 grid md:grid-cols-2 gap-4 sm:gap-5 max-w-6xl mx-auto">
+      <a href="https://english-spur.github.io/admission-site/" target="_blank" rel="noopener" class="group relative overflow-hidden bg-gradient-to-br from-emerald-600 to-teal-800 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-white hover:shadow-2xl hover:shadow-emerald-600/30 transition-all duration-300">
         <div class="relative z-10 flex flex-col h-full justify-between">
           <div>
-            <div class="text-4xl mb-4 group-hover:scale-110 transition-transform origin-left">🎓</div>
-            <div class="font-black text-2xl mb-1"><span class="i18n-bn">ভর্তি হতে চান?</span><span class="i18n-en">Want to Enroll?</span></div>
-            <div class="text-emerald-50 text-sm mt-1"><span class="i18n-bn">সব কোর্সের বিস্তারিত ও মূল্য দেখতে ভর্তি পেজে যান।</span><span class="i18n-en">Visit our admission site for full details.</span></div>
+            <div class="text-3xl sm:text-4xl mb-3 sm:mb-4 group-hover:scale-110 transition-transform origin-left">🎓</div>
+            <div class="font-black text-xl sm:text-2xl mb-1"><span class="i18n-bn">ভর্তি হতে চান?</span><span class="i18n-en">Want to Enroll?</span></div>
+            <div class="text-emerald-50 text-xs sm:text-sm mt-1"><span class="i18n-bn">সব কোর্সের বিস্তারিত ও মূল্য দেখতে ভর্তি পেজে যান।</span><span class="i18n-en">Visit our admission site for full details.</span></div>
           </div>
-          <div class="mt-6 flex items-center gap-2 text-sm font-bold bg-white/10 w-fit px-4 py-2 rounded-lg backdrop-blur border border-white/20 group-hover:bg-white/20 transition">
+          <div class="mt-4 sm:mt-6 flex items-center gap-2 text-xs sm:text-sm font-bold bg-white/10 w-fit px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg backdrop-blur border border-white/20 group-hover:bg-white/20 transition">
             <span class="i18n-bn">Admission Site</span><span class="i18n-en">Visit Admission Site</span> 
-            <svg class="w-4 h-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </div>
         </div>
       </a>
       
-      <a href="https://english-spur.github.io/Official-Website/Digital%20Store.html" target="_blank" rel="noopener" class="group relative overflow-hidden bg-gradient-to-br from-lime-500 to-emerald-600 rounded-3xl p-8 text-white hover:shadow-2xl hover:shadow-lime-500/30 transition-all duration-300">
+      <a href="https://english-spur.github.io/Official-Website/Digital%20Store.html" target="_blank" rel="noopener" class="group relative overflow-hidden bg-gradient-to-br from-lime-500 to-emerald-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-white hover:shadow-2xl hover:shadow-lime-500/30 transition-all duration-300">
         <div class="relative z-10 flex flex-col h-full justify-between">
           <div>
-            <div class="text-4xl mb-4 group-hover:scale-110 transition-transform origin-left">🛒</div>
-            <div class="font-black text-2xl mb-1"><span class="i18n-bn">ডিজিটাল অ্যাসেট স্টোর</span><span class="i18n-en">Digital Asset Store</span></div>
-            <div class="text-white/90 text-sm mt-1"><span class="i18n-bn">ই-বুক ও স্টাডি মেটেরিয়াল স্বল্প মুল্যে ডাউনলোড করুন।</span><span class="i18n-en">Download E-books & Study Materials.</span></div>
+            <div class="text-3xl sm:text-4xl mb-3 sm:mb-4 group-hover:scale-110 transition-transform origin-left">🛒</div>
+            <div class="font-black text-xl sm:text-2xl mb-1"><span class="i18n-bn">ডিজিটাল অ্যাসেট স্টোর</span><span class="i18n-en">Digital Asset Store</span></div>
+            <div class="text-white/90 text-xs sm:text-sm mt-1"><span class="i18n-bn">ই-বুক ও স্টাডি মেটেরিয়াল স্বল্প মুল্যে ডাউনলোড করুন।</span><span class="i18n-en">Download E-books & Study Materials.</span></div>
           </div>
-          <div class="mt-6 flex items-center gap-2 text-sm font-bold bg-white/10 w-fit px-4 py-2 rounded-lg backdrop-blur border border-white/20 group-hover:bg-white/20 transition">
+          <div class="mt-4 sm:mt-6 flex items-center gap-2 text-xs sm:text-sm font-bold bg-white/10 w-fit px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg backdrop-blur border border-white/20 group-hover:bg-white/20 transition">
             <span class="i18n-bn">স্টোরে যান</span><span class="i18n-en">Visit Store</span> 
-            <svg class="w-4 h-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </div>
         </div>
       </a>
@@ -310,12 +312,12 @@
 
   <!-- FREE DEMO TAB -->
   <section id="tab-demo" class="tab-content">
-    <div class="text-center max-w-2xl mx-auto mb-8">
-      <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-3">Book a Free Demo Class</h2>
-      <p class="text-slate-500"><span class="i18n-bn">ফর্মটি পূরণ করে আপনার ডেমো ক্লাসের সিট বুক করুন।</span><span class="i18n-en">Fill out the form to secure your demo class seat.</span></p>
+    <div class="text-center max-w-2xl mx-auto mb-6 sm:mb-8">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-slate-800 mb-2 sm:mb-3">Book a Free Demo Class</h2>
+      <p class="text-sm sm:text-base text-slate-500"><span class="i18n-bn">ফর্মটি পূরণ করে আপনার ডেমো ক্লাসের সিট বুক করুন।</span><span class="i18n-en">Fill out the form to secure your demo class seat.</span></p>
     </div>
 
-    <div class="max-w-3xl mx-auto bg-white rounded-3xl shadow-premium border border-emerald-100 overflow-hidden">
+    <div class="max-w-3xl mx-auto bg-white rounded-2xl sm:rounded-3xl shadow-premium border border-emerald-100 overflow-hidden">
       <div class="demo-container" id="demo-registration-area">
         <div class="brand-header">
             <h1>English Spur</h1>
@@ -434,18 +436,18 @@
             </div>
 
             <!-- ACTION BUTTONS -->
-            <div class="flex flex-col gap-3 mt-8 w-full" id="action-buttons-wrapper">
-                <button type="button" onclick="processForm('share')" id="btnShareWhatsApp" class="w-full bg-brand text-white font-bold py-3.5 px-4 rounded-xl hover:bg-emerald-700 transition shadow-lg shadow-emerald-500/30 flex items-center justify-center gap-2 text-sm md:text-base">
-                    <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <div class="flex flex-col gap-3 mt-6 sm:mt-8 w-full" id="action-buttons-wrapper">
+                <button type="button" onclick="processForm('share')" id="btnShareWhatsApp" class="w-full bg-brand text-white font-bold py-3 sm:py-3.5 px-4 rounded-xl hover:bg-emerald-700 transition shadow-lg shadow-emerald-500/30 flex items-center justify-center gap-2 text-xs sm:text-sm md:text-base">
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                     <span>Share as PDF via WhatsApp</span>
                 </button>
                 
-                <button type="button" onclick="processForm('download')" id="btnDownloadOnly" class="w-full bg-slate-700 text-white font-bold py-3.5 px-4 rounded-xl hover:bg-slate-800 transition shadow-lg shadow-slate-500/30 flex items-center justify-center gap-2 text-sm md:text-base">
-                    <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <button type="button" onclick="processForm('download')" id="btnDownloadOnly" class="w-full bg-slate-700 text-white font-bold py-3 sm:py-3.5 px-4 rounded-xl hover:bg-slate-800 transition shadow-lg shadow-slate-500/30 flex items-center justify-center gap-2 text-xs sm:text-sm md:text-base">
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
                     <span>Download PDF Only</span>
                 </button>
 
-                <div class="guide-text mt-2 text-sm text-slate-500 text-center bg-slate-50 p-3 rounded-lg border border-slate-100">
+                <div class="guide-text mt-2 text-xs sm:text-sm text-slate-500 text-center bg-slate-50 p-3 rounded-lg border border-slate-100">
                     ℹ️ <strong>নির্দেশনা:</strong> <b>Share</b> বাটনে ক্লিক করলে সোজা হোয়াটসঅ্যাপ ওপেন হবে এবং ফাইল অ্যাটাচ হয়ে যাবে। <b>Download</b> বাটনে ক্লিক করলে শুধু ফাইলটি সেভ হবে।
                 </div>
             </div>
@@ -456,18 +458,18 @@
 
   <!-- GALLERY TAB -->
   <section id="tab-gallery" class="tab-content">
-    <div class="text-center max-w-2xl mx-auto mb-10">
-      <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-3">Gallery</h2>
-      <p class="text-slate-500"><span class="i18n-bn">আমাদের লাইভ ক্লাস ও ইভেন্টের কিছু মুহূর্ত</span><span class="i18n-en">Glimpses of our live classes and events</span></p>
+    <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-slate-800 mb-2 sm:mb-3">Gallery</h2>
+      <p class="text-sm sm:text-base text-slate-500"><span class="i18n-bn">আমাদের লাইভ ক্লাস ও ইভেন্টের কিছু মুহূর্ত</span><span class="i18n-en">Glimpses of our live classes and events</span></p>
     </div>
     
-    <div id="galleryGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"></div>
+    <div id="galleryGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6"></div>
     
-    <div id="galleryEmpty" class="hidden text-center py-20 bg-white rounded-3xl border-2 border-dashed border-emerald-200 mt-6">
-      <div class="text-5xl mb-4">📷</div>
-      <p class="text-slate-500 font-medium"><span class="i18n-bn">এখনো কোনো ছবি আপলোড করা হয়নি। শীঘ্রই আসছে!</span><span class="i18n-en">No photos uploaded yet. Coming soon!</span></p>
+    <div id="galleryEmpty" class="hidden text-center py-16 sm:py-20 bg-white rounded-2xl sm:rounded-3xl border-2 border-dashed border-emerald-200 mt-4 sm:mt-6">
+      <div class="text-4xl sm:text-5xl mb-3 sm:mb-4">📷</div>
+      <p class="text-sm sm:text-base text-slate-500 font-medium"><span class="i18n-bn">এখনো কোনো ছবি আপলোড করা হয়নি। শীঘ্রই আসছে!</span><span class="i18n-en">No photos uploaded yet. Coming soon!</span></p>
     </div>
-    <div id="galleryLoading" class="text-center py-20 flex flex-col items-center justify-center text-slate-400">
+    <div id="galleryLoading" class="text-center py-16 sm:py-20 flex flex-col items-center justify-center text-slate-400">
       <svg class="animate-spin -ml-1 mr-3 h-8 w-8 text-brand mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
       <span class="i18n-bn">লোড হচ্ছে...</span><span class="i18n-en">Loading...</span>
     </div>
@@ -475,164 +477,159 @@
 
   <!-- TESTIMONIALS TAB -->
   <section id="tab-testimonials" class="tab-content">
-    <div class="text-center max-w-2xl mx-auto mb-10">
-      <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-3">Students Testimonials</h2>
-      <p class="text-slate-500"><span class="i18n-bn">আমাদের শিক্ষার্থীদের সাফল্যের গল্প</span><span class="i18n-en">Success stories from our students</span></p>
+    <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-slate-800 mb-2 sm:mb-3">Students Testimonials</h2>
+      <p class="text-sm sm:text-base text-slate-500"><span class="i18n-bn">আমাদের শিক্ষার্থীদের সাফল্যের গল্প</span><span class="i18n-en">Success stories from our students</span></p>
     </div>
-    <div class="bg-white rounded-[2rem] p-8 md:p-12 shadow-premium border border-emerald-100 max-w-4xl mx-auto text-center relative overflow-hidden">
-      <div class="absolute -top-10 -right-10 text-9xl text-emerald-50 opacity-50">”</div>
-      <div class="text-5xl mb-6">🌟</div>
-      <h3 class="text-2xl font-bold text-slate-800 mb-4">Listen, what some of our students say!</h3>
-      <p class="text-slate-600 mb-8 max-w-lg mx-auto">Discover how English Spur has helped hundreds of learners overcome hesitation and speak English with confidence.</p>
-      <a href="https://english-spur.github.io/Official-Website/testimonials.html" target="_blank" class="inline-flex items-center gap-2 bg-brand text-white font-bold px-8 py-3.5 rounded-xl hover:bg-emerald-700 transition shadow-lg shadow-emerald-500/30">
-       Testimonials <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+    <div class="bg-white rounded-2xl sm:rounded-[2rem] p-6 sm:p-8 md:p-12 shadow-premium border border-emerald-100 max-w-4xl mx-auto text-center relative overflow-hidden">
+      <div class="absolute -top-10 -right-10 text-8xl sm:text-9xl text-emerald-50 opacity-50">”</div>
+      <div class="text-4xl sm:text-5xl mb-4 sm:mb-6">🌟</div>
+      <h3 class="text-xl sm:text-2xl font-bold text-slate-800 mb-2 sm:mb-4">Listen, what some of our students say!</h3>
+      <p class="text-sm sm:text-base text-slate-600 mb-6 sm:mb-8 max-w-lg mx-auto">Discover how English Spur has helped hundreds of learners overcome hesitation and speak English with confidence.</p>
+      <a href="https://english-spur.github.io/Official-Website/testimonials.html" target="_blank" class="inline-flex items-center gap-2 bg-brand text-white font-bold px-6 py-3 sm:px-8 sm:py-3.5 rounded-xl hover:bg-emerald-700 transition shadow-lg shadow-emerald-500/30 text-sm sm:text-base">
+       Testimonials
       </a>
     </div>
   </section>
 
   <!-- CAREER TAB -->
   <section id="tab-career" class="tab-content">
-    <div class="text-center max-w-2xl mx-auto mb-10">
-      <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-3">Career Opportunities</h2>
-      <p class="text-slate-500"><span class="i18n-bn">আমাদের সাথে আপনার ক্যারিয়ার গড়ুন</span><span class="i18n-en">Build your career with us</span></p>
+    <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-slate-800 mb-2 sm:mb-3">Career Opportunities</h2>
+      <p class="text-sm sm:text-base text-slate-500"><span class="i18n-bn">আমাদের সাথে আপনার ক্যারিয়ার গড়ুন</span><span class="i18n-en">Build your career with us</span></p>
     </div>
-    <div class="bg-white rounded-[2rem] p-8 md:p-12 shadow-premium border border-emerald-100 max-w-4xl mx-auto text-center relative overflow-hidden">
-      <div class="text-5xl mb-6">💼</div>
-      <h3 class="text-2xl font-bold text-slate-800 mb-4">Join Our Team</h3>
-      <p class="text-slate-600 mb-8 max-w-lg mx-auto">We are always looking for passionate trainers and creative minds. Check out our current openings and apply today.</p>
-      <a href="https://english-spur.github.io/Official-Website/career.html" target="_blank" class="inline-flex items-center gap-2 bg-brand text-white font-bold px-8 py-3.5 rounded-xl hover:bg-emerald-700 transition shadow-lg shadow-emerald-500/30">
-        View Career Options <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+    <div class="bg-white rounded-2xl sm:rounded-[2rem] p-6 sm:p-8 md:p-12 shadow-premium border border-emerald-100 max-w-4xl mx-auto text-center relative overflow-hidden">
+      <div class="text-4xl sm:text-5xl mb-4 sm:mb-6">💼</div>
+      <h3 class="text-xl sm:text-2xl font-bold text-slate-800 mb-2 sm:mb-4">Join Our Team</h3>
+      <p class="text-sm sm:text-base text-slate-600 mb-6 sm:mb-8 max-w-lg mx-auto">We are always looking for passionate trainers and creative minds. Check out our current openings and apply today.</p>
+      <a href="https://english-spur.github.io/Official-Website/career.html" target="_blank" class="inline-flex items-center gap-2 bg-brand text-white font-bold px-6 py-3 sm:px-8 sm:py-3.5 rounded-xl hover:bg-emerald-700 transition shadow-lg shadow-emerald-500/30 text-sm sm:text-base">
+        View Career Options
       </a>
     </div>
   </section>
 
   <!-- DONATION TAB -->
   <section id="tab-donation" class="tab-content">
-    <div class="text-center max-w-2xl mx-auto mb-10">
-      <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-3">Support Our Mission</h2>
-      <p class="text-slate-500"><span class="i18n-bn">আমাদের শিক্ষা কার্যক্রম এগিয়ে নিতে সাহায্য করুন</span><span class="i18n-en">Help us move our educational initiatives forward</span></p>
+    <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-slate-800 mb-2 sm:mb-3">Support Our Mission</h2>
+      <p class="text-sm sm:text-base text-slate-500"><span class="i18n-bn">আমাদের শিক্ষা কার্যক্রম এগিয়ে নিতে সাহায্য করুন</span><span class="i18n-en">Help us move our educational initiatives forward</span></p>
     </div>
     
-    <div class="bg-white rounded-[2rem] p-8 md:p-12 shadow-premium border border-emerald-100 max-w-3xl mx-auto text-center relative overflow-hidden">
+    <div class="bg-white rounded-2xl sm:rounded-[2rem] p-6 sm:p-8 md:p-12 shadow-premium border border-emerald-100 max-w-3xl mx-auto text-center relative overflow-hidden">
       <div class="absolute -top-10 -right-10 w-40 h-40 bg-emerald-50 rounded-full blur-2xl -z-10"></div>
       
-      <div class="text-6xl mb-6 animate-pulse">💖</div>
+      <div class="text-5xl sm:text-6xl mb-4 sm:mb-6 animate-pulse">💖</div>
       
-      <h3 class="text-2xl md:text-3xl font-black text-slate-800 mb-4">"শিক্ষাই আলো, শিক্ষাই শক্তি"</h3>
+      <h3 class="text-xl sm:text-2xl md:text-3xl font-black text-slate-800 mb-2 sm:mb-4">"শিক্ষাই আলো, শিক্ষাই শক্তি"</h3>
       
-      <p class="text-slate-600 mb-8 max-w-xl mx-auto italic text-base md:text-lg leading-relaxed">
+      <p class="text-sm sm:text-base text-slate-600 mb-6 sm:mb-8 max-w-xl mx-auto italic leading-relaxed">
         আপনার একটি ছোট্ট সাহায্য, একজন সুবিধাবঞ্চিত শিক্ষার্থীর জীবনের মোড় ঘুরিয়ে দিতে পারে। ইংলিশ স্পারের এই শিক্ষা যাত্রায় পাশে দাঁড়িয়ে একটি সুন্দর ও আলোকিত ভবিষ্যৎ গড়ার অংশীদার হোন।
       </p>
 
-      <div class="inline-block bg-emerald-50/50 p-6 rounded-3xl border-2 border-dashed border-emerald-200 mb-6 transition hover:bg-emerald-50">
-        <p class="text-sm font-bold text-slate-500 mb-4 uppercase tracking-widest">Scan to Donate via UPI</p>
-        <img src="SOVAN KAPRI GOOGLE PAY.jpg" alt="Sovan Kapri Google Pay QR Code" class="w-72 h-72 md:w-96 md:h-96 object-contain rounded-xl mx-auto shadow-md bg-white p-3">
+      <div class="inline-block bg-emerald-50/50 p-4 sm:p-6 rounded-2xl sm:rounded-3xl border-2 border-dashed border-emerald-200 mb-4 sm:mb-6 transition hover:bg-emerald-50">
+        <p class="text-xs sm:text-sm font-bold text-slate-500 mb-2 sm:mb-4 uppercase tracking-widest">Scan to Donate via UPI</p>
+        <img src="SOVAN KAPRI GOOGLE PAY.jpg" alt="Sovan Kapri Google Pay QR Code" class="w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 object-contain rounded-xl mx-auto shadow-md bg-white p-2 sm:p-3">
       </div>
 
-      <p class="text-slate-500 text-sm mb-3">Or you can pay directly using UPI ID:</p>
-      <button onclick="navigator.clipboard.writeText('sovankapri-1@okhdfcbank'); alert('UPI ID Copied successfully!')" class="group inline-flex items-center gap-2 bg-slate-100 hover:bg-emerald-100 border border-slate-200 hover:border-emerald-300 text-slate-700 font-mono font-bold px-5 py-2.5 rounded-xl transition-all shadow-sm">
+      <p class="text-xs sm:text-sm text-slate-500 mb-2 sm:mb-3">Or you can pay directly using UPI ID:</p>
+      <button onclick="navigator.clipboard.writeText('sovankapri-1@okhdfcbank'); alert('UPI ID Copied successfully!')" class="group inline-flex items-center gap-2 bg-slate-100 hover:bg-emerald-100 border border-slate-200 hover:border-emerald-300 text-slate-700 font-mono font-bold px-3 py-2 sm:px-5 sm:py-2.5 rounded-xl transition-all shadow-sm text-xs sm:text-base">
         sovankapri-1@okhdfcbank
-        <span class="text-xs bg-white px-2 py-1 rounded text-slate-400 group-hover:text-emerald-600 shadow-sm transition">Copy</span>
+        <span class="text-[10px] sm:text-xs bg-white px-2 py-1 rounded text-slate-400 group-hover:text-emerald-600 shadow-sm transition">Copy</span>
       </button>
     </div>
   </section>
 
   <!-- SOCIAL TAB -->
   <section id="tab-social" class="tab-content">
-    <div class="text-center max-w-2xl mx-auto mb-10">
-      <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-3"><span class="i18n-bn">আমাদের সোশ্যাল হ্যান্ডেল</span><span class="i18n-en">Our Social Handles</span></h2>
-      <p class="text-slate-500 font-medium text-brand"><span class="i18n-bn">Empowering Your Voice, Shaping Your Future…</span><span class="i18n-en">Empowering Your Voice, Shaping Your Future…</span></p>
+    <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-slate-800 mb-2 sm:mb-3"><span class="i18n-bn">আমাদের সোশ্যাল হ্যান্ডেল</span><span class="i18n-en">Our Social Handles</span></h2>
+      <p class="text-sm sm:text-base text-slate-500 font-medium text-brand"><span class="i18n-bn">Empowering Your Voice, Shaping Your Future…</span><span class="i18n-en">Empowering Your Voice, Shaping Your Future…</span></p>
     </div>
     
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
-      <a href="https://www.youtube.com/@SOVANKAPRI123" target="_blank" rel="noopener" class="group flex items-center gap-5 bg-white p-6 rounded-3xl border border-slate-100 shadow-premium hover:shadow-premium-hover hover:-translate-y-1 transition-all duration-300">
-        <div class="w-16 h-16 rounded-2xl bg-red-50 flex items-center justify-center text-red-600 text-3xl shrink-0 group-hover:scale-110 transition-transform">
-          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 max-w-4xl mx-auto">
+      <a href="https://www.youtube.com/@SOVANKAPRI123" target="_blank" rel="noopener" class="group flex items-center gap-4 sm:gap-5 bg-white p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-slate-100 shadow-premium hover:shadow-premium-hover hover:-translate-y-1 transition-all duration-300">
+        <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-red-50 flex items-center justify-center text-red-600 text-2xl sm:text-3xl shrink-0 group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6 sm:w-8 sm:h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
         </div>
         <div class="flex-1">
-          <div class="font-bold text-lg text-slate-800">YouTube</div>
-          <div class="text-sm text-slate-500">Shovan Kapri Official</div>
+          <div class="font-bold text-base sm:text-lg text-slate-800">YouTube</div>
+          <div class="text-xs sm:text-sm text-slate-500">Shovan Kapri Official</div>
         </div>
-        <div class="text-slate-300 group-hover:text-red-500 group-hover:translate-x-1 transition-all">→</div>
       </a>
       
-      <a href="https://www.facebook.com/profile.php?id=100078171497466" target="_blank" rel="noopener" class="group flex items-center gap-5 bg-white p-6 rounded-3xl border border-slate-100 shadow-premium hover:shadow-premium-hover hover:-translate-y-1 transition-all duration-300">
-        <div class="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 text-3xl shrink-0 group-hover:scale-110 transition-transform">
-          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      <a href="https://www.facebook.com/profile.php?id=100078171497466" target="_blank" rel="noopener" class="group flex items-center gap-4 sm:gap-5 bg-white p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-slate-100 shadow-premium hover:shadow-premium-hover hover:-translate-y-1 transition-all duration-300">
+        <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 text-2xl sm:text-3xl shrink-0 group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6 sm:w-8 sm:h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         </div>
         <div class="flex-1">
-          <div class="font-bold text-lg text-slate-800">Facebook</div>
-          <div class="text-sm text-slate-500">English Spur Page</div>
+          <div class="font-bold text-base sm:text-lg text-slate-800">Facebook</div>
+          <div class="text-xs sm:text-sm text-slate-500">English Spur Page</div>
         </div>
-        <div class="text-slate-300 group-hover:text-blue-500 group-hover:translate-x-1 transition-all">→</div>
       </a>
       
-      <a href="https://www.instagram.com/kaprishovan/" target="_blank" rel="noopener" class="group flex items-center gap-5 bg-white p-6 rounded-3xl border border-slate-100 shadow-premium hover:shadow-premium-hover hover:-translate-y-1 transition-all duration-300">
-        <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 flex items-center justify-center text-white text-3xl shrink-0 group-hover:scale-110 transition-transform">
-          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      <a href="https://www.instagram.com/kaprishovan/" target="_blank" rel="noopener" class="group flex items-center gap-4 sm:gap-5 bg-white p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-slate-100 shadow-premium hover:shadow-premium-hover hover:-translate-y-1 transition-all duration-300">
+        <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 flex items-center justify-center text-white text-2xl sm:text-3xl shrink-0 group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6 sm:w-8 sm:h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
         </div>
         <div class="flex-1">
-          <div class="font-bold text-lg text-slate-800">Instagram</div>
-          <div class="text-sm text-slate-500">@kaprishovan</div>
+          <div class="font-bold text-base sm:text-lg text-slate-800">Instagram</div>
+          <div class="text-xs sm:text-sm text-slate-500">@kaprishovan</div>
         </div>
-        <div class="text-slate-300 group-hover:text-pink-500 group-hover:translate-x-1 transition-all">→</div>
       </a>
 
-      <a href="https://wa.me/919875340842" target="_blank" rel="noopener" class="group flex items-center gap-5 bg-white p-6 rounded-3xl border border-slate-100 shadow-premium hover:shadow-premium-hover hover:-translate-y-1 transition-all duration-300">
-        <div class="w-16 h-16 rounded-2xl bg-emerald-50 flex items-center justify-center text-emerald-600 text-3xl shrink-0 group-hover:scale-110 transition-transform">
-          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <a href="https://wa.me/919875340842" target="_blank" rel="noopener" class="group flex items-center gap-4 sm:gap-5 bg-white p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-slate-100 shadow-premium hover:shadow-premium-hover hover:-translate-y-1 transition-all duration-300">
+        <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-emerald-50 flex items-center justify-center text-emerald-600 text-2xl sm:text-3xl shrink-0 group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6 sm:w-8 sm:h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         </div>
         <div class="flex-1">
-          <div class="font-bold text-lg text-slate-800">WhatsApp</div>
-          <div class="text-sm text-slate-500">+91 98753 40842</div>
+          <div class="font-bold text-base sm:text-lg text-slate-800">WhatsApp</div>
+          <div class="text-xs sm:text-sm text-slate-500">+91 98753 40842</div>
         </div>
-        <div class="text-slate-300 group-hover:text-emerald-500 group-hover:translate-x-1 transition-all">→</div>
       </a>
     </div>
   </section>
 
   <!-- PORTFOLIO TAB -->
   <section id="tab-portfolio" class="tab-content">
-    <div class="text-center max-w-2xl mx-auto mb-10">
-      <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-3">Portfolio</h2>
-      <p class="text-slate-500"><span class="i18n-bn">প্রতিষ্ঠাতা ও প্রধান প্রশিক্ষকের পেশাগত প্রোফাইল</span><span class="i18n-en">Professional profile of the Founder & Lead Trainer</span></p>
+    <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-slate-800 mb-2 sm:mb-3">Portfolio</h2>
+      <p class="text-sm sm:text-base text-slate-500"><span class="i18n-bn">প্রতিষ্ঠাতা ও প্রধান প্রশিক্ষকের পেশাগত প্রোফাইল</span><span class="i18n-en">Professional profile of the Founder & Lead Trainer</span></p>
     </div>
     
-    <div class="bg-white rounded-[2rem] p-8 md:p-12 shadow-premium border border-emerald-100 max-w-4xl mx-auto relative overflow-hidden">
+    <div class="bg-white rounded-2xl sm:rounded-[2rem] p-6 sm:p-8 md:p-12 shadow-premium border border-emerald-100 max-w-4xl mx-auto relative overflow-hidden">
       <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-50 rounded-bl-full -z-10"></div>
-      <div class="flex flex-col md:flex-row gap-8 items-start">
-        <img src="sk.png" alt="Sovan Kapri" class="w-40 h-40 md:w-56 md:h-56 rounded-full object-cover shrink-0 border-4 border-emerald-100 shadow-lg bg-white">
+      <div class="flex flex-col md:flex-row gap-6 sm:gap-8 items-center md:items-start text-center md:text-left">
+        <img src="sk.png" alt="Sovan Kapri" class="w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 rounded-full object-cover shrink-0 border-4 border-emerald-100 shadow-lg bg-white">
         <div class="flex-1">
-          <h3 class="text-3xl md:text-4xl font-black text-slate-800 tracking-tight">SOVAN KAPRI</h3>
-          <p class="text-brand font-bold mt-2 text-lg">English Communication Trainer & Retail Specialist</p>
-          <p class="text-slate-500 text-sm mt-1 flex items-center gap-2">
+          <h3 class="text-2xl sm:text-3xl md:text-4xl font-black text-slate-800 tracking-tight">SOVAN KAPRI</h3>
+          <p class="text-brand font-bold mt-1 sm:mt-2 text-base sm:text-lg">English Communication Trainer & Retail Specialist</p>
+          <p class="text-slate-500 text-xs sm:text-sm mt-1 flex items-center justify-center md:justify-start gap-2">
             <span class="w-1.5 h-1.5 rounded-full bg-accent"></span> Communication · Leadership · Innovation
           </p>
           
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
-            <div class="bg-emerald-50 rounded-2xl p-4 text-center border border-emerald-100">
-              <div class="font-black text-brand text-2xl">10+</div><div class="text-xs font-medium text-slate-500 mt-1">Institutes</div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-6 sm:mt-8">
+            <div class="bg-emerald-50 rounded-xl sm:rounded-2xl p-3 sm:p-4 text-center border border-emerald-100">
+              <div class="font-black text-brand text-xl sm:text-2xl">10+</div><div class="text-[10px] sm:text-xs font-medium text-slate-500 mt-1">Institutes</div>
             </div>
-            <div class="bg-emerald-50 rounded-2xl p-4 text-center border border-emerald-100">
-              <div class="font-black text-brand text-2xl">7+</div><div class="text-xs font-medium text-slate-500 mt-1">Brands</div>
+            <div class="bg-emerald-50 rounded-xl sm:rounded-2xl p-3 sm:p-4 text-center border border-emerald-100">
+              <div class="font-black text-brand text-xl sm:text-2xl">7+</div><div class="text-[10px] sm:text-xs font-medium text-slate-500 mt-1">Brands</div>
             </div>
-            <div class="bg-emerald-50 rounded-2xl p-4 text-center border border-emerald-100">
-              <div class="font-black text-brand text-2xl">4000+</div><div class="text-xs font-medium text-slate-500 mt-1">Online Classes</div>
+            <div class="bg-emerald-50 rounded-xl sm:rounded-2xl p-3 sm:p-4 text-center border border-emerald-100">
+              <div class="font-black text-brand text-xl sm:text-2xl">4000+</div><div class="text-[10px] sm:text-xs font-medium text-slate-500 mt-1">Online Classes</div>
             </div>
-            <div class="bg-emerald-50 rounded-2xl p-4 text-center border border-emerald-100">
-              <div class="font-black text-brand text-2xl">500+</div><div class="text-xs font-medium text-slate-500 mt-1">Students Trained</div>
+            <div class="bg-emerald-50 rounded-xl sm:rounded-2xl p-3 sm:p-4 text-center border border-emerald-100">
+              <div class="font-black text-brand text-xl sm:text-2xl">500+</div><div class="text-[10px] sm:text-xs font-medium text-slate-500 mt-1">Students Trained</div>
             </div>
           </div>
           
-          <div class="mt-8 flex flex-wrap gap-2 text-xs font-semibold">
-            <span class="px-4 py-2 bg-amber-50 text-amber-700 rounded-full border border-amber-100 flex items-center gap-1">🏆 Best Teacher Award 2023</span>
-            <span class="px-4 py-2 bg-emerald-50 text-emerald-700 rounded-full border border-emerald-100 flex items-center gap-1">💎 Best Sales Person 2019</span>
-            <span class="px-4 py-2 bg-teal-50 text-teal-700 rounded-full border border-teal-100 flex items-center gap-1">🌟 All-Rounder Award 2020</span>
+          <div class="mt-6 sm:mt-8 flex flex-wrap justify-center md:justify-start gap-2 text-[10px] sm:text-xs font-semibold">
+            <span class="px-3 py-1.5 sm:px-4 sm:py-2 bg-amber-50 text-amber-700 rounded-full border border-amber-100 flex items-center gap-1">🏆 Best Teacher Award 2023</span>
+            <span class="px-3 py-1.5 sm:px-4 sm:py-2 bg-emerald-50 text-emerald-700 rounded-full border border-emerald-100 flex items-center gap-1">💎 Best Sales Person 2019</span>
+            <span class="px-3 py-1.5 sm:px-4 sm:py-2 bg-teal-50 text-teal-700 rounded-full border border-teal-100 flex items-center gap-1">🌟 All-Rounder Award 2020</span>
           </div>
           
-          <a href="https://english-spur.github.io/sovan-portfolio/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 mt-8 bg-emerald-900 text-white font-bold px-8 py-3.5 rounded-xl hover:bg-emerald-800 transition shadow-lg shadow-emerald-900/20">
+          <a href="https://english-spur.github.io/sovan-portfolio/" target="_blank" rel="noopener" class="inline-flex items-center justify-center md:justify-start gap-2 mt-6 sm:mt-8 bg-emerald-900 text-white font-bold px-6 py-3 sm:px-8 sm:py-3.5 rounded-xl hover:bg-emerald-800 transition shadow-lg shadow-emerald-900/20 text-sm sm:text-base w-full md:w-auto">
             <span class="i18n-bn">সম্পূর্ণ পোর্টফোলিও দেখুন</span><span class="i18n-en">View Full Portfolio</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
         </div>
       </div>
@@ -641,43 +638,43 @@
 
   <!-- CONTACT TAB -->
   <section id="tab-contact" class="tab-content">
-    <div class="text-center max-w-2xl mx-auto mb-10">
-      <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-3"><span class="i18n-bn">যোগাযোগ</span><span class="i18n-en">Contact</span></h2>
-      <p class="text-slate-500"><span class="i18n-bn">যেকোনো প্রশ্নে আমরা পাশে আছি</span><span class="i18n-en">We're here for any question</span></p>
+    <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-slate-800 mb-2 sm:mb-3"><span class="i18n-bn">যোগাযোগ</span><span class="i18n-en">Contact</span></h2>
+      <p class="text-sm sm:text-base text-slate-500"><span class="i18n-bn">যেকোনো প্রশ্নে আমরা পাশে আছি</span><span class="i18n-en">We're here for any question</span></p>
     </div>
     
-    <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-      <div class="bg-white rounded-3xl p-8 border border-emerald-100 shadow-premium">
-        <h3 class="font-bold text-xl mb-6 text-slate-800"><span class="i18n-bn">যোগাযোগের মাধ্যম</span><span class="i18n-en">Reach Out</span></h3>
-        <div class="space-y-4">
-          <a href="https://wa.me/919875340842" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl hover:bg-emerald-50 transition border border-transparent hover:border-emerald-100">
-            <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl shrink-0">💬</div>
-            <div><div class="font-bold text-slate-800">WhatsApp & Call</div><div class="text-slate-500 text-sm">+91 98753 40842</div></div>
+    <div class="grid md:grid-cols-2 gap-4 sm:gap-6 max-w-5xl mx-auto">
+      <div class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-emerald-100 shadow-premium">
+        <h3 class="font-bold text-lg sm:text-xl mb-4 sm:mb-6 text-slate-800"><span class="i18n-bn">যোগাযোগের মাধ্যম</span><span class="i18n-en">Reach Out</span></h3>
+        <div class="space-y-3 sm:space-y-4">
+          <a href="https://wa.me/919875340842" target="_blank" class="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl hover:bg-emerald-50 transition border border-transparent hover:border-emerald-100">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg sm:text-xl shrink-0">💬</div>
+            <div><div class="font-bold text-slate-800 text-sm sm:text-base">WhatsApp & Call</div><div class="text-slate-500 text-xs sm:text-sm">+91 98753 40842</div></div>
           </a>
-          <a href="mailto:englishspur2020@gmail.com" class="flex items-center gap-4 p-4 rounded-2xl hover:bg-emerald-50 transition border border-transparent hover:border-emerald-100">
-            <div class="w-12 h-12 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center text-xl shrink-0">✉</div>
-            <div><div class="font-bold text-slate-800">Email</div><div class="text-slate-500 text-sm">englishspur2020@gmail.com</div></div>
+          <a href="mailto:englishspur2020@gmail.com" class="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl hover:bg-emerald-50 transition border border-transparent hover:border-emerald-100">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center text-lg sm:text-xl shrink-0">✉</div>
+            <div><div class="font-bold text-slate-800 text-sm sm:text-base">Email</div><div class="text-slate-500 text-xs sm:text-sm">englishspur2020@gmail.com</div></div>
           </a>
-          <div class="flex items-center gap-4 p-4 rounded-2xl">
-            <div class="w-12 h-12 rounded-xl bg-lime-50 text-lime-600 flex items-center justify-center text-xl shrink-0">📍</div>
-            <div><div class="font-bold text-slate-800"><span class="i18n-bn">ঠিকানা</span><span class="i18n-en">Address</span></div><div class="text-slate-500 text-sm">Kanaipur, Bantul, Bagnan, Howrah – 711312</div></div>
+          <div class="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-lime-50 text-lime-600 flex items-center justify-center text-lg sm:text-xl shrink-0">📍</div>
+            <div><div class="font-bold text-slate-800 text-sm sm:text-base"><span class="i18n-bn">ঠিকানা</span><span class="i18n-en">Address</span></div><div class="text-slate-500 text-xs sm:text-sm">Kanaipur, Bantul, Bagnan, Howrah – 711312</div></div>
           </div>
         </div>
       </div>
       
-      <div class="bg-white rounded-3xl p-8 border border-emerald-100 shadow-premium">
-        <h3 class="font-bold text-xl mb-6 text-slate-800"><span class="i18n-bn">দ্রুত মেসেজ পাঠান</span><span class="i18n-en">Quick Message</span></h3>
-        <form onsubmit="sendQuickMsg(event)" class="space-y-4">
+      <div class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-emerald-100 shadow-premium">
+        <h3 class="font-bold text-lg sm:text-xl mb-4 sm:mb-6 text-slate-800"><span class="i18n-bn">দ্রুত মেসেজ পাঠান</span><span class="i18n-en">Quick Message</span></h3>
+        <form onsubmit="sendQuickMsg(event)" class="space-y-3 sm:space-y-4">
           <div>
             <label class="text-xs font-semibold text-slate-500 ml-1">Name / নাম</label>
-            <input required id="cName" placeholder="Your name" class="w-full mt-1 px-4 py-3 rounded-xl border border-emerald-100 focus:border-brand focus:ring-2 focus:ring-emerald-200 outline-none transition-all">
+            <input required id="cName" placeholder="Your name" class="w-full mt-1 px-3 py-2.5 sm:px-4 sm:py-3 rounded-xl border border-emerald-100 focus:border-brand focus:ring-2 focus:ring-emerald-200 outline-none transition-all text-sm">
           </div>
           <div>
             <label class="text-xs font-semibold text-slate-500 ml-1">Message / বার্তা</label>
-            <textarea required id="cMsg" rows="4" placeholder="Your message" class="w-full mt-1 px-4 py-3 rounded-xl border border-emerald-100 focus:border-brand focus:ring-2 focus:ring-emerald-200 outline-none transition-all resize-none"></textarea>
+            <textarea required id="cMsg" rows="4" placeholder="Your message" class="w-full mt-1 px-3 py-2.5 sm:px-4 sm:py-3 rounded-xl border border-emerald-100 focus:border-brand focus:ring-2 focus:ring-emerald-200 outline-none transition-all resize-none text-sm"></textarea>
           </div>
-          <button class="w-full bg-brand text-white font-bold py-3.5 rounded-xl hover:bg-emerald-700 transition shadow-lg shadow-emerald-500/30 flex items-center justify-center gap-2">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <button class="w-full bg-brand text-white font-bold py-3 sm:py-3.5 rounded-xl hover:bg-emerald-700 transition shadow-lg shadow-emerald-500/30 flex items-center justify-center gap-2 text-sm sm:text-base">
+            <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             <span class="i18n-bn">WhatsApp-এ পাঠান</span><span class="i18n-en">Send via WhatsApp</span>
           </button>
         </form>
@@ -689,37 +686,37 @@
 
 <!-- GALLERY FULL SCREEN LIGHTBOX -->
 <div id="galleryModal" class="hidden fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex flex-col items-center justify-center p-4 sm:p-8" onclick="if(event.target===this)closeGallery()">
-  <button onclick="closeGallery()" class="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 text-white shadow-md flex items-center justify-center hover:bg-white/20 transition z-10">
-    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+  <button onclick="closeGallery()" class="absolute top-4 sm:top-6 right-4 sm:right-6 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 text-white shadow-md flex items-center justify-center hover:bg-white/20 transition z-10">
+    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
   </button>
   <img id="gmImg" class="max-w-full max-h-[80vh] object-contain rounded-xl shadow-2xl animate-fadeIn" alt="">
-  <div class="mt-6 text-center max-w-3xl animate-fadeIn">
-    <h3 id="gmTitle" class="text-lg md:text-xl font-bold text-white mb-4"></h3>
-    <a id="gmVideoBtn" href="#" target="_blank" class="hidden inline-flex items-center justify-center gap-2 bg-brand text-white font-bold px-6 py-2.5 rounded-xl hover:bg-emerald-600 transition shadow-lg shadow-brand/30">
-      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Watch Video
+  <div class="mt-4 sm:mt-6 text-center max-w-3xl animate-fadeIn">
+    <h3 id="gmTitle" class="text-base sm:text-lg md:text-xl font-bold text-white mb-3 sm:mb-4"></h3>
+    <a id="gmVideoBtn" href="#" target="_blank" class="hidden inline-flex items-center justify-center gap-2 bg-brand text-white font-bold px-5 py-2 sm:px-6 sm:py-2.5 rounded-xl hover:bg-emerald-600 transition shadow-lg shadow-brand/30 text-sm sm:text-base">
+      <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Watch Video
     </a>
   </div>
 </div>
 
 <!-- FOOTER -->
-<footer class="bg-[#022c22] text-slate-300 mt-16 border-t border-emerald-900">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
-    <div class="grid md:grid-cols-3 gap-8 items-center border-b border-emerald-800 pb-8 mb-8">
+<footer class="bg-[#022c22] text-slate-300 mt-12 sm:mt-16 border-t border-emerald-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+    <div class="grid md:grid-cols-3 gap-6 sm:gap-8 items-center border-b border-emerald-800 pb-6 sm:pb-8 mb-6 sm:mb-8 text-center md:text-left">
       <div class="flex flex-col items-center md:items-start justify-center">
-        <img src="logo.png" alt="English Spur Logo" class="h-12 md:h-16 w-auto object-contain mb-3 brightness-0 invert opacity-90">
-        <div class="text-2xl font-black tracking-tight"><span class="text-white">ENGLISH</span> <span class="text-emerald-400">SPUR</span></div>
-        <p class="text-sm text-emerald-200 mt-2 text-center md:text-left">Online Training Academy · Since 2020</p>
+        <img src="logo.png" alt="English Spur Logo" class="h-10 sm:h-12 md:h-16 w-auto object-contain mb-2 sm:mb-3 brightness-0 invert opacity-90">
+        <div class="text-xl sm:text-2xl font-black tracking-tight"><span class="text-white">ENGLISH</span> <span class="text-emerald-400">SPUR</span></div>
+        <p class="text-xs sm:text-sm text-emerald-200 mt-1 sm:mt-2">Online Training Academy · Since 2020</p>
       </div>
-      <div class="flex justify-center gap-4">
-        <a href="https://www.youtube.com/@SOVANKAPRI123" target="_blank" class="w-10 h-10 rounded-full bg-emerald-900 flex items-center justify-center hover:bg-red-500 hover:text-white transition"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-        <a href="https://www.facebook.com/profile.php?id=100078171497466" target="_blank" class="w-10 h-10 rounded-full bg-emerald-900 flex items-center justify-center hover:bg-blue-600 hover:text-white transition"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-        <a href="https://www.instagram.com/kaprishovan/" target="_blank" class="w-10 h-10 rounded-full bg-emerald-900 flex items-center justify-center hover:bg-pink-600 hover:text-white transition"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+      <div class="flex justify-center gap-3 sm:gap-4">
+        <a href="https://www.youtube.com/@SOVANKAPRI123" target="_blank" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-emerald-900 flex items-center justify-center hover:bg-red-500 hover:text-white transition"><svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        <a href="https://www.facebook.com/profile.php?id=100078171497466" target="_blank" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-emerald-900 flex items-center justify-center hover:bg-blue-600 hover:text-white transition"><svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="https://www.instagram.com/kaprishovan/" target="_blank" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-emerald-900 flex items-center justify-center hover:bg-pink-600 hover:text-white transition"><svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
       </div>
       <div class="text-center md:text-right">
-        <p class="text-xs text-emerald-400/60">© 2026 ENGLISH SPUR.<br>All Rights Reserved.</p>
+        <p class="text-[10px] sm:text-xs text-emerald-400/60">© 2026 ENGLISH SPUR.<br>All Rights Reserved.</p>
       </div>
     </div>
-    <div class="text-center text-xs text-emerald-600">
+    <div class="text-center text-[10px] sm:text-xs text-emerald-600">
       Created by: <a href="https://english-spur.github.io/sovan-portfolio/" class="text-emerald-300 hover:text-white transition font-semibold">Shovan Kapri</a>
     </div>
   </div>
@@ -762,7 +759,7 @@
     { name: 'Official Website', url: 'https://english-spur.github.io/Official-Website/', icon: '🌐' },
     { name: 'Admission Site', url: 'https://english-spur.github.io/admission-site/', icon: '🎓' },
     { name: 'Digital Store', url: 'https://english-spur.github.io/Official-Website/Digital%20Store.html', icon: '🛒' },
-    { name: '1000 Sentences', url: 'https://english-spur.github.io/1000-daily-use-sentences/', icon: '📚' },
+    { name: 'Quizzes and More..', url: 'https://english-spur.github.io/Official-Website/free%20resource.html', icon: '📝' },
     { name: 'Word Puzzle', url: 'https://english-spur.github.io/Word-Puzzle/', icon: '🧩' },
     { name: 'ES Radio', url: 'https://english-spur.github.io/ES-Radio/', icon: '📻' },
     { name: 'Word Safari', url: 'https://english-spur.github.io/Word-Safari/', icon: '🦁' },
@@ -770,12 +767,12 @@
   ];
 
   document.getElementById('homeSites').innerHTML = sites.map(s => `
-    <a href="${s.url}" target="_blank" rel="noopener" class="group flex flex-col items-center justify-center p-4 md:p-5 bg-white rounded-2xl border border-emerald-100 shadow-sm hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1 hover:border-emerald-300 transition-all duration-300 text-center relative overflow-hidden">
+    <a href="${s.url}" target="_blank" rel="noopener" class="group flex flex-col items-center justify-center p-3 md:p-5 bg-white rounded-2xl border border-emerald-100 shadow-sm hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1 hover:border-emerald-300 transition-all duration-300 text-center relative overflow-hidden">
       <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 to-lime-400 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <div class="w-12 h-12 md:w-14 md:h-14 bg-emerald-50 rounded-xl flex items-center justify-center text-2xl md:text-3xl mb-3 group-hover:bg-emerald-100 group-hover:scale-110 transition-all duration-300">
+      <div class="w-10 h-10 md:w-14 md:h-14 bg-emerald-50 rounded-xl flex items-center justify-center text-xl md:text-3xl mb-2 md:mb-3 group-hover:bg-emerald-100 group-hover:scale-110 transition-all duration-300">
         ${s.icon}
       </div>
-      <span class="text-sm font-bold text-slate-700 leading-tight group-hover:text-brand transition-colors">${s.name}</span>
+      <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight group-hover:text-brand transition-colors">${s.name}</span>
     </a>
   `).join('');
 
@@ -1045,16 +1042,16 @@
       if (window.galleryData.length === 0) { empty.classList.remove('hidden'); return; }
       
       grid.innerHTML = window.galleryData.map((it, i) => `
-        <button onclick="openGallery(${i})" class="group text-left bg-white rounded-3xl overflow-hidden border border-emerald-100 shadow-sm hover:shadow-premium-hover hover:-translate-y-1 transition-all duration-300">
+        <button onclick="openGallery(${i})" class="group text-left bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-emerald-100 shadow-sm hover:shadow-premium-hover hover:-translate-y-1 transition-all duration-300">
           <div class="aspect-square overflow-hidden bg-slate-100 relative">
             <img src="${it.imageUrl}" loading="lazy" alt="" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-              <span class="text-white text-xs font-bold bg-brand/80 backdrop-blur px-3 py-1 rounded-full">View Image</span>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3 sm:p-4">
+              <span class="text-white text-[10px] sm:text-xs font-bold bg-brand/80 backdrop-blur px-2 py-1 sm:px-3 sm:py-1 rounded-full">View Image</span>
             </div>
           </div>
-          <div class="p-4">
-            <p class="text-sm font-bold text-slate-700 line-clamp-2">${escapeHtml(it.title)}</p>
-            ${it.videoUrl ? `<span class="inline-flex items-center gap-1 text-xs text-brand mt-2 font-semibold"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Video</span>` : ''}
+          <div class="p-3 sm:p-4">
+            <p class="text-xs sm:text-sm font-bold text-slate-700 line-clamp-2">${escapeHtml(it.title)}</p>
+            ${it.videoUrl ? `<span class="inline-flex items-center gap-1 text-[10px] sm:text-xs text-brand mt-2 font-semibold"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Video</span>` : ''}
           </div>
         </button>
       `).join('');
@@ -1078,7 +1075,7 @@
       loading.style.display = 'none';
       
       if (coursesData.length === 0) { 
-        grid.innerHTML = '<p class="text-center text-slate-500 col-span-1 sm:col-span-2 lg:col-span-3 py-10">এখনো কোনো কোর্স যোগ করা হয়নি।</p>'; 
+        grid.innerHTML = '<p class="text-center text-slate-500 col-span-1 sm:col-span-2 lg:col-span-3 py-10 text-sm sm:text-base">এখনো কোনো কোর্স যোগ করা হয়নি।</p>'; 
         return; 
       }
 
@@ -1096,24 +1093,23 @@
       grid.innerHTML = coursesData.map(course => {
         const t = themeMap[course.theme] || themeMap.emerald;
         return `
-          <div class="${t.bg} border ${t.border} rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+          <div class="${t.bg} border ${t.border} rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
             <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="inline-block ${t.tag} text-xs font-black px-3 py-1 rounded-full tracking-wider">${course.audience}</span>
-                ${course.isNew ? `<span class="inline-block bg-orange-500 text-white text-[10px] font-black px-2.5 py-1 rounded-full shadow-sm animate-pulse">NEW</span>` : ''}
+              <div class="flex items-center justify-between mb-3 sm:mb-4">
+                <span class="inline-block ${t.tag} text-[10px] sm:text-xs font-black px-2 py-0.5 sm:px-3 sm:py-1 rounded-full tracking-wider">${course.audience}</span>
+                ${course.isNew ? `<span class="inline-block bg-orange-500 text-white text-[9px] sm:text-[10px] font-black px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full shadow-sm animate-pulse">NEW</span>` : ''}
               </div>
-              <h3 class="text-xl md:text-2xl font-black text-slate-800 leading-snug group-hover:opacity-80 transition-colors">${course.title}</h3>
+              <h3 class="text-lg sm:text-xl md:text-2xl font-black text-slate-800 leading-snug group-hover:opacity-80 transition-colors">${course.title}</h3>
             </div>
-            <a href="${course.link}" target="_blank" class="mt-8 w-full flex items-center justify-center gap-2 bg-white ${t.text} font-bold px-4 py-3.5 rounded-xl ${t.hover} group-hover:text-white transition-all shadow-sm">
+            <a href="${course.link}" target="_blank" class="mt-4 sm:mt-8 w-full flex items-center justify-center gap-2 bg-white ${t.text} font-bold px-3 py-2.5 sm:px-4 sm:py-3.5 rounded-lg sm:rounded-xl ${t.hover} group-hover:text-white transition-all shadow-sm text-xs sm:text-sm">
               <span class="i18n-bn">বিস্তারিত দেখুন</span><span class="i18n-en">View Details</span> 
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </a>
           </div>
         `;
       }).join('');
     } catch (e) {
       console.error(e);
-      loading.innerHTML = '<span class="text-red-500">কোর্স লোড করা যায়নি। ফায়ারবেস রুলস চেক করুন।</span>';
+      loading.innerHTML = '<span class="text-red-500 text-sm sm:text-base">কোর্স লোড করা যায়নি। ফায়ারবেস রুলস চেক করুন।</span>';
     }
   }
 
